@@ -11,3 +11,9 @@
 ## About Billecta-DTO
 
 [DataTransferObjects](https://github.com/spatie/data-transfer-object) for Billectas API. Scraped from their site, this package does not include any gateway for implementation only  
+
+
+
+Install
+
+`composer require tarre/billecta-dto`
