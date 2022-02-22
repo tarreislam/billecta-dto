@@ -47,6 +47,7 @@ class ProductsTemplateView extends DataTransferObject
 	 * 2: Package
 	 * 3: VAT
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DefaultProductType;
+	public $DefaultProductType;
 }

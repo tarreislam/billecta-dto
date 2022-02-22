@@ -15,8 +15,9 @@ class InvoiceActionView extends DataTransferObject
 	 * 0: SV
 	 * 1: EN
 	 * 2: FI
+	 * @var string|int
 	 */
-	public int $CommunicationLanguage;
+	public $CommunicationLanguage;
 
 	/** Format: date-time */
 	public string $Created;
@@ -29,8 +30,9 @@ class InvoiceActionView extends DataTransferObject
 	 * 4: EInvoice
 	 * 5: Kivra
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DeliveryMethod;
+	public $DeliveryMethod;
 	public ?DebtorView $Debtor = null;
 	public ?InvoiceActionStateView $State = null;
 	public ?array $Invoices = null;
@@ -58,8 +60,9 @@ class InvoiceActionView extends DataTransferObject
 	 * 1: AboveEffectiveReference
 	 * 2: NoInterest
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $InterestType;
+	public $InterestType;
 	public ?string $OurReference = null;
 	public ?string $YourReference = null;
 
@@ -124,8 +127,9 @@ class InvoiceActionView extends DataTransferObject
 	 * 13: OrderInvoiceAction
 	 * 14: PaymentAdviceAction
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $ActionType;
+	public $ActionType;
 	public ?AmountView $InvoiceFee = null;
 	public ?AmountView $FreightFee = null;
 	public bool $VatIsIncluded;

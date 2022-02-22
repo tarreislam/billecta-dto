@@ -33,8 +33,9 @@ class DebtCollectionActionStateView extends DataTransferObject
 	 * 36: ForeignMakeReadyForLocalRepresentative
 	 * 37: ReadyForAttest
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Stage;
+	public $Stage;
 
 	/** Format: int32 */
 	public int $NumberOfSentInvoiceReminders;

@@ -16,8 +16,9 @@ class SendReconciliationInvoiceReminderView extends DataTransferObject
 	 * 4: EInvoice
 	 * 5: Kivra
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public ?int $DeliveryMethod = null;
+	public $DeliveryMethod = null;
 	public ?AmountView $ReminderFee = null;
 	public ?FileView $ReminderFile = null;
 	public ?bool $SendWithColor = null;

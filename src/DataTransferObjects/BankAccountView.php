@@ -16,8 +16,9 @@ class BankAccountView extends DataTransferObject
 	 * 0: Approved
 	 * 1: Unapproved
 	 * 2: Unknown
+	 * @var string|int
 	 */
-	public int $AutogiroCompatible;
+	public $AutogiroCompatible;
 	public ?AmountView $Balance = null;
 	public ?string $Iban = null;
 	public ?string $HolderName = null;

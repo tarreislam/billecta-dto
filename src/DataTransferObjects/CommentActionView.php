@@ -15,6 +15,7 @@ class CommentActionView extends DataTransferObject
 	 * 1: ToDebtor
 	 * 2: ToBillecta
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Target;
+	public $Target;
 }

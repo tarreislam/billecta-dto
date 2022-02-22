@@ -35,8 +35,9 @@ class InvoiceActionSubView extends DataTransferObject
 	 * 22: SalesRequestedCancelled
 	 * 23: SalesRequestedDenied
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Stage;
+	public $Stage;
 
 	/**
 	 * 0: DebtCollectionAction
@@ -54,8 +55,9 @@ class InvoiceActionSubView extends DataTransferObject
 	 * 13: OrderInvoiceAction
 	 * 14: PaymentAdviceAction
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $ActionType;
+	public $ActionType;
 
 	/**
 	 * 0: Email
@@ -65,16 +67,18 @@ class InvoiceActionSubView extends DataTransferObject
 	 * 4: EInvoice
 	 * 5: Kivra
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DeliveryMethod;
+	public $DeliveryMethod;
 
 	/**
 	 * 0: Unknown
 	 * 1: Received
 	 * 2: Opened
 	 * 3: Viewed
+	 * @var string|int
 	 */
-	public int $DeliveryStatus;
+	public $DeliveryStatus;
 
 	/** Format: date-time */
 	public ?string $ClosedDate = null;

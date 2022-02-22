@@ -33,8 +33,9 @@ class OutgoingPaymentStatusView extends DataTransferObject
 	 * 3: Failed
 	 * 4: Aborted
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Status;
+	public $Status;
 	public ?string $Reference = null;
 	public ?FileView $File = null;
 	public ?string $Comment = null;

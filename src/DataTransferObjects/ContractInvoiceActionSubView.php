@@ -38,16 +38,18 @@ class ContractInvoiceActionSubView extends DataTransferObject
 	 * 4: EInvoice
 	 * 5: Kivra
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DeliveryMethod;
+	public $DeliveryMethod;
 
 	/**
 	 * 0: Monthly
 	 * 1: Yearly
 	 * 2: Quarterly
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $RecurrenceInterval;
+	public $RecurrenceInterval;
 	public ?string $ContractNumber = null;
 
 	/** Format: date-time */

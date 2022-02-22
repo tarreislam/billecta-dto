@@ -14,8 +14,9 @@ class OutgoingPaymentView extends DataTransferObject
 	 * 1: PlusGiro
 	 * 2: BankAccount
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $ReceivingPaymentMethod;
+	public $ReceivingPaymentMethod;
 	public ?string $SendingBankgiroNo = null;
 	public ?string $ReceivingBankgiroNo = null;
 	public ?string $ReceivingPlusgiroNo = null;

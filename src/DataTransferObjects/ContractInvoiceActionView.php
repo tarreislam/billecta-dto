@@ -34,23 +34,26 @@ class ContractInvoiceActionView extends DataTransferObject
 	 * 4: EInvoice
 	 * 5: Kivra
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DeliveryMethod;
+	public $DeliveryMethod;
 
 	/**
 	 * 0: SV
 	 * 1: EN
 	 * 2: FI
+	 * @var string|int
 	 */
-	public int $CommunicationLanguage;
+	public $CommunicationLanguage;
 
 	/**
 	 * 0: Fixed
 	 * 1: AboveEffectiveReference
 	 * 2: NoInterest
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public ?int $InterestType = null;
+	public $InterestType = null;
 
 	/** Format: int32 */
 	public int $InterestStartInDaysAfterDueDate;
@@ -76,8 +79,9 @@ class ContractInvoiceActionView extends DataTransferObject
 	 * 2: Current
 	 * 3: Next
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $InvoicePeriod;
+	public $InvoicePeriod;
 
 	/** Format: int32 */
 	public int $InvoicePeriodMonthsOffset;
@@ -109,6 +113,7 @@ class ContractInvoiceActionView extends DataTransferObject
 	 * 13: OrderInvoiceAction
 	 * 14: PaymentAdviceAction
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $GenerateInvoicesOfActionType;
+	public $GenerateInvoicesOfActionType;
 }

@@ -20,8 +20,9 @@ class CreditCardAddView extends DataTransferObject
 	 * 1: Succeeded
 	 * 2: Failed
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Status;
+	public $Status;
 	public ?string $AddWindowUrl = null;
 	public ?string $SuccessUrl = null;
 	public ?string $FailureUrl = null;
@@ -33,6 +34,7 @@ class CreditCardAddView extends DataTransferObject
 	 * 0: SV
 	 * 1: EN
 	 * 2: FI
+	 * @var string|int
 	 */
-	public int $Language;
+	public $Language;
 }

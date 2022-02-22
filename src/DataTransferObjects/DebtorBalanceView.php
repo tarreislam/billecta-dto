@@ -21,7 +21,8 @@ class DebtorBalanceView extends DataTransferObject
 	 * 21: BalanceFromInvoice
 	 * 22: ManualBalance
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $BalanceType;
+	public $BalanceType;
 	public ?string $Description = null;
 }

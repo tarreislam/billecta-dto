@@ -14,8 +14,9 @@ class DebtCollectionDetailsView extends DataTransferObject
 	 * 2: DebtCollection
 	 * 3: Bailiff
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $StartDebtCollectionActionLevel;
+	public $StartDebtCollectionActionLevel;
 
 	/**
 	 * 0: LatePaymentFee
@@ -23,8 +24,9 @@ class DebtCollectionDetailsView extends DataTransferObject
 	 * 2: DebtCollection
 	 * 3: Bailiff
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $EndDebtCollectionActionLevel;
+	public $EndDebtCollectionActionLevel;
 
 	/** Format: int32 */
 	public int $NumberOfReminders;

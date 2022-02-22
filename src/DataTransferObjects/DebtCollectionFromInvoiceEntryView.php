@@ -16,15 +16,17 @@ class DebtCollectionFromInvoiceEntryView extends DataTransferObject
 	 * 4: EInvoice
 	 * 5: Kivra
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DeliveryMethod;
+	public $DeliveryMethod;
 
 	/**
 	 * 0: SV
 	 * 1: EN
 	 * 2: FI
+	 * @var string|int
 	 */
-	public int $CommunicationLanguage;
+	public $CommunicationLanguage;
 	public ?string $ReasonDescription = null;
 
 	/** Format: int32 */
@@ -36,8 +38,9 @@ class DebtCollectionFromInvoiceEntryView extends DataTransferObject
 	 * 2: DebtCollection
 	 * 3: Bailiff
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $StartDebtCollectionActionLevel;
+	public $StartDebtCollectionActionLevel;
 
 	/**
 	 * 0: LatePaymentFee
@@ -45,8 +48,9 @@ class DebtCollectionFromInvoiceEntryView extends DataTransferObject
 	 * 2: DebtCollection
 	 * 3: Bailiff
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $EndDebtCollectionActionLevel;
+	public $EndDebtCollectionActionLevel;
 
 	/** Format: int32 */
 	public int $PaymentTermsInDays;
@@ -57,8 +61,9 @@ class DebtCollectionFromInvoiceEntryView extends DataTransferObject
 	 * 1: AboveEffectiveReference
 	 * 2: NoInterest
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public ?int $InterestType = null;
+	public $InterestType = null;
 	public ?string $OurReference = null;
 	public ?string $YourReference = null;
 

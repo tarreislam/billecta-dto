@@ -15,8 +15,9 @@ class DefaultActionConfigView extends DataTransferObject
 	 * 2: DebtCollection
 	 * 3: Bailiff
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $StartDebtCollectionActionLevel;
+	public $StartDebtCollectionActionLevel;
 
 	/**
 	 * 0: LatePaymentFee
@@ -24,8 +25,9 @@ class DefaultActionConfigView extends DataTransferObject
 	 * 2: DebtCollection
 	 * 3: Bailiff
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $EndDebtCollectionActionLevel;
+	public $EndDebtCollectionActionLevel;
 
 	/**
 	 * 0: Email
@@ -35,15 +37,17 @@ class DefaultActionConfigView extends DataTransferObject
 	 * 4: EInvoice
 	 * 5: Kivra
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DeliveryMethod;
+	public $DeliveryMethod;
 
 	/**
 	 * 0: SV
 	 * 1: EN
 	 * 2: FI
+	 * @var string|int
 	 */
-	public int $CommunicationLanguage;
+	public $CommunicationLanguage;
 
 	/** Format: int32 */
 	public int $PaymentTermsInDays;
@@ -63,8 +67,9 @@ class DefaultActionConfigView extends DataTransferObject
 	 * 1: AboveEffectiveReference
 	 * 2: NoInterest
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $InterestType;
+	public $InterestType;
 
 	/** Format: int32 */
 	public int $InterestStartInDaysAfterDueDate;

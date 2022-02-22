@@ -22,8 +22,9 @@ class InvoiceActionEntryView extends DataTransferObject
 	 * 13: OrderInvoiceAction
 	 * 14: PaymentAdviceAction
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $ActionType;
+	public $ActionType;
 
 	/** Format: guid */
 	public string $CreditorPublicId;
@@ -51,8 +52,9 @@ class InvoiceActionEntryView extends DataTransferObject
 	 * 1: AboveEffectiveReference
 	 * 2: NoInterest
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public ?int $InterestType = null;
+	public $InterestType = null;
 	public ?string $OurReference = null;
 	public ?string $YourReference = null;
 
@@ -64,15 +66,17 @@ class InvoiceActionEntryView extends DataTransferObject
 	 * 4: EInvoice
 	 * 5: Kivra
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DeliveryMethod;
+	public $DeliveryMethod;
 
 	/**
 	 * 0: SV
 	 * 1: EN
 	 * 2: FI
+	 * @var string|int
 	 */
-	public int $CommunicationLanguage;
+	public $CommunicationLanguage;
 	public ?string $Message = null;
 	public ?string $InvoiceNumber = null;
 	public ?AmountView $InvoiceFee = null;

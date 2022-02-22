@@ -21,8 +21,9 @@ class BankAccountRequestView extends DataTransferObject
 	 * 10: FSPA
 	 * 11: FSPASB
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Bank;
+	public $Bank;
 	public ?string $SSN = null;
 	public ?string $QR = null;
 
@@ -31,8 +32,9 @@ class BankAccountRequestView extends DataTransferObject
 	 * 1: Success
 	 * 2: Failed
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Status;
+	public $Status;
 	public ?array $AccountNumbers = null;
 	public ?string $BankIdAutostartToken = null;
 	public bool $IsBankIdAutostartTokenRequired;

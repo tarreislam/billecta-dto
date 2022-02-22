@@ -22,8 +22,9 @@ class OverpaymentDetailsView extends DataTransferObject
 	 * 13: OrderInvoiceAction
 	 * 14: PaymentAdviceAction
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $ActionType;
+	public $ActionType;
 	public ?string $ActionPublicId = null;
 	public ?string $InvoiceNumber = null;
 	public ?string $UsedOnActionPublicId = null;

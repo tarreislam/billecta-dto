@@ -15,8 +15,9 @@ class CreditorKycView extends DataTransferObject
 	 * 1: Approved
 	 * 2: Rejected
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $State;
+	public $State;
 	public ?string $SignedByName = null;
 	public ?string $SignedBySSN = null;
 

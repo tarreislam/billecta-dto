@@ -23,8 +23,9 @@ class ContractInvoiceActionRecordView extends DataTransferObject
 	 * 0: Amount
 	 * 1: Percentage
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DiscountType;
+	public $DiscountType;
 	public float $VAT;
 	public ?string $CostCenter = null;
 	public ?string $Project = null;
@@ -53,16 +54,18 @@ class ContractInvoiceActionRecordView extends DataTransferObject
 	 * 107: Gardening
 	 * 108: WhiteGoods
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $RotRutType;
+	public $RotRutType;
 
 	/**
 	 * 0: Standard
 	 * 1: Message
 	 * 2: Package
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $RecordType;
+	public $RecordType;
 	public bool $VatIsIncluded;
 	public bool $Hidden;
 	public ?string $ExternalReference = null;

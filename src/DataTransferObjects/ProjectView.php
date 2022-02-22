@@ -25,6 +25,7 @@ class ProjectView extends DataTransferObject
 	 * 1: Ongoing
 	 * 2: Compelted
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Status;
+	public $Status;
 }

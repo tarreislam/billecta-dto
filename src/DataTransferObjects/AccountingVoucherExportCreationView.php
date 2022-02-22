@@ -20,6 +20,7 @@ class AccountingVoucherExportCreationView extends DataTransferObject
 	 * 0: EventDate
 	 * 1: TransactionDate
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DateSelectionType;
+	public $DateSelectionType;
 }

@@ -16,8 +16,9 @@ class SwishPaymentStatusView extends DataTransferObject
 	 * 4: Cancelled
 	 * 5: Refunded
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Status;
+	public $Status;
 
 	/** Format: date-time */
 	public ?string $PaidDate = null;

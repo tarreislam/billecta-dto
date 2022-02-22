@@ -16,8 +16,9 @@ class DebtorAutogiroView extends DataTransferObject
 	 * 2: Failed
 	 * 3: Removed
 	 * 100: Migration
+	 * @var string|int
 	 */
-	public int $Stage;
+	public $Stage;
 	public ?string $PayerNumber = null;
 	public ?string $PaymentServiceSupplier = null;
 

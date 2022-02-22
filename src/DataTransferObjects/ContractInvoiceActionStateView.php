@@ -11,8 +11,9 @@ class ContractInvoiceActionStateView extends DataTransferObject
 	 * 1: Created
 	 * 17: InvoiceCreated
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Stage;
+	public $Stage;
 
 	/** Format: date-time */
 	public ?string $LastRunDate = null;

@@ -13,8 +13,9 @@ class ReconciliationInvoiceActionStateView extends DataTransferObject
 	 * 12: InvoiceSent
 	 * 16: SentToDebtCollection
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Stage;
+	public $Stage;
 	public bool $IsPayed;
 
 	/** Format: date-time */

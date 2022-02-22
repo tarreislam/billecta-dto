@@ -14,8 +14,9 @@ class CreditorBankInfoView extends DataTransferObject
 	 * 2: BankAccount
 	 * 3: IBAN
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $PaymentMethod;
+	public $PaymentMethod;
 	public ?string $BankgiroNo = null;
 	public bool $BankgiroNoVerified;
 	public ?string $PlusgiroNo = null;

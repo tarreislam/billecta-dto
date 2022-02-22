@@ -22,7 +22,8 @@ class RegisterPaymentView extends DataTransferObject
 	 * 1: AsCurrencyDifference
 	 * 2: AsOverPayments
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $OvershootingAmountHandling;
+	public $OvershootingAmountHandling;
 	public ?string $PaymentReferenceText = null;
 }

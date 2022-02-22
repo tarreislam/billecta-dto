@@ -24,8 +24,9 @@ class AccountingSettingsView extends DataTransferObject
 	 * 2: EUBAS97
 	 * 3: NE2007
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public ?int $SieKPTYP = null;
+	public $SieKPTYP = null;
 
 	/**
 	 * 0: CalendarYear
@@ -40,8 +41,9 @@ class AccountingSettingsView extends DataTransferObject
 	 * 9: OctToSep
 	 * 10: NovToOct
 	 * 11: DecToNov
+	 * @var string|int
 	 */
-	public int $FiscalYear;
+	public $FiscalYear;
 
 	/** Format: date-time */
 	public ?string $ExtendedFirstFiscalYearStartDate = null;
@@ -60,8 +62,9 @@ class AccountingSettingsView extends DataTransferObject
 	 * 0: InvoiceMethod
 	 * 1: CashMethod
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $BookKeepingMethod;
+	public $BookKeepingMethod;
 
 	/** Format: int32 */
 	public ?int $LockPreviousPeriodsAtDay = null;

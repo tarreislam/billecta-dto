@@ -28,8 +28,9 @@ class SupplierInvoiceActionSubView extends DataTransferObject
 	 * 18: PaymentSent
 	 * 19: PaymentCancelled
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Stage;
+	public $Stage;
 
 	/**
 	 * 0: DebtCollectionAction
@@ -47,8 +48,9 @@ class SupplierInvoiceActionSubView extends DataTransferObject
 	 * 13: OrderInvoiceAction
 	 * 14: PaymentAdviceAction
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $ActionType;
+	public $ActionType;
 
 	/** Format: date-time */
 	public string $Created;
@@ -86,7 +88,8 @@ class SupplierInvoiceActionSubView extends DataTransferObject
 	 * 6: Fortnox
 	 * 7: PeAccountingInvoice
 	 * 10: Kommed
+	 * @var string|int
 	 */
-	public int $Origin;
+	public $Origin;
 	public ?string $ExternalSourceId = null;
 }

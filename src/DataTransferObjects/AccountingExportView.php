@@ -23,14 +23,16 @@ class AccountingExportView extends DataTransferObject
 	 * 0: SIE4
 	 * 1: CSV
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Format;
+	public $Format;
 
 	/**
 	 * 0: EventDate
 	 * 1: TransactionDate
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DateSelectionType;
+	public $DateSelectionType;
 	public ?FileView $File = null;
 }

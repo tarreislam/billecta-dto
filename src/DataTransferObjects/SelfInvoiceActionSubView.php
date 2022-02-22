@@ -29,8 +29,9 @@ class SelfInvoiceActionSubView extends DataTransferObject
 	 * 18: PaymentSent
 	 * 19: PaymentCancelled
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Stage;
+	public $Stage;
 
 	/** Format: date-time */
 	public string $Created;
@@ -57,8 +58,9 @@ class SelfInvoiceActionSubView extends DataTransferObject
 	 * 13: OrderInvoiceAction
 	 * 14: PaymentAdviceAction
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $ActionType;
+	public $ActionType;
 
 	/** Format: date-time */
 	public ?string $AttestedDate = null;
@@ -89,16 +91,18 @@ class SelfInvoiceActionSubView extends DataTransferObject
 	 * 4: EInvoice
 	 * 5: Kivra
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DeliveryMethod;
+	public $DeliveryMethod;
 
 	/**
 	 * 0: Unknown
 	 * 1: Received
 	 * 2: Opened
 	 * 3: Viewed
+	 * @var string|int
 	 */
-	public int $DeliveryStatus;
+	public $DeliveryStatus;
 
 	/** Format: date-time */
 	public ?string $NextPaymentDate = null;

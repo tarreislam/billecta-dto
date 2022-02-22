@@ -26,8 +26,9 @@ class DebtCollectionActionInvoiceView extends DataTransferObject
 	 * 1: AboveEffectiveReference
 	 * 2: NoInterest
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $InterestType;
+	public $InterestType;
 	public ?string $OurReference = null;
 	public ?string $YourReference = null;
 	public ?string $Name = null;

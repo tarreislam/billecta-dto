@@ -16,8 +16,9 @@ class SearchView extends DataTransferObject
 	 * 0: NoFilter
 	 * 1: ROT
 	 * 2: RUT
+	 * @var string|int
 	 */
-	public int $RotRut;
+	public $RotRut;
 
 	/** Format: guid */
 	public string $CreditorPublicId;

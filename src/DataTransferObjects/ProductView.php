@@ -46,7 +46,8 @@ class ProductView extends DataTransferObject
 	 * 2: Package
 	 * 3: VAT
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $ProductType;
+	public $ProductType;
 	public ?string $ConfigurationCode = null;
 }

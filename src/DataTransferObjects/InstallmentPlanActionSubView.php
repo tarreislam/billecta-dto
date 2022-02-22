@@ -31,8 +31,9 @@ class InstallmentPlanActionSubView extends DataTransferObject
 	 * 13: Attested
 	 * 15: ReturnToSourceRequested
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Stage;
+	public $Stage;
 
 	/**
 	 * 0: DebtCollectionAction
@@ -50,8 +51,9 @@ class InstallmentPlanActionSubView extends DataTransferObject
 	 * 13: OrderInvoiceAction
 	 * 14: PaymentAdviceAction
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $ActionType;
+	public $ActionType;
 
 	/**
 	 * 0: Email
@@ -61,8 +63,9 @@ class InstallmentPlanActionSubView extends DataTransferObject
 	 * 4: EInvoice
 	 * 5: Kivra
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DeliveryMethod;
+	public $DeliveryMethod;
 
 	/** Format: date-time */
 	public string $Created;
@@ -92,8 +95,9 @@ class InstallmentPlanActionSubView extends DataTransferObject
 	 * 1: Received
 	 * 2: Opened
 	 * 3: Viewed
+	 * @var string|int
 	 */
-	public int $DeliveryStatus;
+	public $DeliveryStatus;
 	public ?array $Files = null;
 	public ?array $OCRs = null;
 	public ?array $InvoiceNumbers = null;
@@ -102,8 +106,9 @@ class InstallmentPlanActionSubView extends DataTransferObject
 	 * 0: SV
 	 * 1: EN
 	 * 2: FI
+	 * @var string|int
 	 */
-	public int $CommunicationLanguage;
+	public $CommunicationLanguage;
 
 	/** Format: int32 */
 	public int $PaymentTermsInDays;

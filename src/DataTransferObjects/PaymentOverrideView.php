@@ -20,8 +20,9 @@ class PaymentOverrideView extends DataTransferObject
 	 * 0: None
 	 * 1: OCR
 	 * 2: Message
+	 * @var string|int
 	 */
-	public int $ReferenceType;
+	public $ReferenceType;
 
 	/**
 	 * 0: BankGiro
@@ -29,6 +30,7 @@ class PaymentOverrideView extends DataTransferObject
 	 * 2: BankAccount
 	 * 3: IBAN
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $ReceivingAccountType;
+	public $ReceivingAccountType;
 }

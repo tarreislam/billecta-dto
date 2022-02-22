@@ -23,8 +23,9 @@ class SelfInvoiceActionRecordView extends DataTransferObject
 	 * 0: Amount
 	 * 1: Percentage
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DiscountType;
+	public $DiscountType;
 	public float $VAT;
 
 	/**
@@ -32,8 +33,9 @@ class SelfInvoiceActionRecordView extends DataTransferObject
 	 * 1: Message
 	 * 2: Package
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $RecordType;
+	public $RecordType;
 	public ?string $CostCenter = null;
 	public ?string $Project = null;
 	public bool $Hidden;

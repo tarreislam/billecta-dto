@@ -27,8 +27,9 @@ class IncomingPaymentView extends DataTransferObject
 	 * 13: OrderInvoiceAction
 	 * 14: PaymentAdviceAction
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $ActionType;
+	public $ActionType;
 
 	/** Format: guid */
 	public string $DebtorPublicId;

@@ -14,8 +14,9 @@ class BankIdSignStatusView extends DataTransferObject
 	 * 4: UserReq
 	 * 5: Complete
 	 * 6: Error
+	 * @var string|int
 	 */
-	public int $Status;
+	public $Status;
 	public ?string $SSN = null;
 	public ?string $ReferenceToken = null;
 	public ?string $AutoStartToken = null;
@@ -47,6 +48,7 @@ class BankIdSignStatusView extends DataTransferObject
 	 * 7: userCancel
 	 * 8: cancelled
 	 * 9: startFailed
+	 * @var string|int
 	 */
-	public ?int $HintCode = null;
+	public $HintCode = null;
 }

@@ -15,8 +15,9 @@ class SelfInvoiceActionView extends DataTransferObject
 	 * 0: SV
 	 * 1: EN
 	 * 2: FI
+	 * @var string|int
 	 */
-	public int $CommunicationLanguage;
+	public $CommunicationLanguage;
 
 	/** Format: date-time */
 	public string $Created;
@@ -29,8 +30,9 @@ class SelfInvoiceActionView extends DataTransferObject
 	 * 4: EInvoice
 	 * 5: Kivra
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DeliveryMethod;
+	public $DeliveryMethod;
 	public ?DebtorView $Debtor = null;
 	public ?SelfInvoiceActionStateView $State = null;
 	public ?array $Invoices = null;
@@ -59,8 +61,9 @@ class SelfInvoiceActionView extends DataTransferObject
 	 * 0: None
 	 * 1: OCR
 	 * 2: Message
+	 * @var string|int
 	 */
-	public ?int $TransferReferenceType = null;
+	public $TransferReferenceType = null;
 	public ?AmountView $InvoicedAmount = null;
 	public ?AmountView $InterestAmount = null;
 	public ?AmountView $CurrentAmount = null;
@@ -95,6 +98,7 @@ class SelfInvoiceActionView extends DataTransferObject
 	 * 13: OrderInvoiceAction
 	 * 14: PaymentAdviceAction
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $ActionType;
+	public $ActionType;
 }

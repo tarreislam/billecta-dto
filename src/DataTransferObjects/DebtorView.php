@@ -36,8 +36,9 @@ class DebtorView extends DataTransferObject
 	 * 0: Private
 	 * 1: Company
 	 * -1: Undefined
+	 * @var string|int
 	 */
-	public ?int $DebtorType = null;
+	public $DebtorType = null;
 
 	/**
 	 * 0: ITELLA
@@ -66,8 +67,9 @@ class DebtorView extends DataTransferObject
 	 * 24: AKSESSPUNKT
 	 * 25: FININVOICE
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public ?int $Intermediator = null;
+	public $Intermediator = null;
 
 	/**
 	 * 0: OEB
@@ -90,8 +92,9 @@ class DebtorView extends DataTransferObject
 	 * 19: FRX
 	 * 20: MARG
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public ?int $EInvoiceBank = null;
+	public $EInvoiceBank = null;
 	public ?string $Notes = null;
 	public ?DebtorSelfInvoiceInfoView $DebtorSelfInvoiceInfo = null;
 	public ?DebtorDefaultActionConfigView $DefaultActionConfig = null;

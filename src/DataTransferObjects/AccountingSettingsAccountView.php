@@ -35,6 +35,7 @@ class AccountingSettingsAccountView extends DataTransferObject
 	 * 22: OtherOperatingIncomeAccount
 	 * 23: BankAndTransactionCostAccount
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $AccountType;
+	public $AccountType;
 }

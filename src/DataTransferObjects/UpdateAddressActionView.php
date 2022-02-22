@@ -46,6 +46,7 @@ class UpdateAddressActionView extends DataTransferObject
 	 * 24: AKSESSPUNKT
 	 * 25: FININVOICE
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public ?int $Intermediator = null;
+	public $Intermediator = null;
 }

@@ -18,8 +18,9 @@ class CreditCardPaymentView extends DataTransferObject
 	 * 2: Failed
 	 * 3: Refunded
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Status;
+	public $Status;
 	public ?AmountView $Amount = null;
 	public ?AmountView $RefundedAmount = null;
 
@@ -43,8 +44,9 @@ class CreditCardPaymentView extends DataTransferObject
 	 * 13: OrderInvoiceAction
 	 * 14: PaymentAdviceAction
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $ActionType;
+	public $ActionType;
 	public ?string $Comment = null;
 	public ?string $PaymentWindowUrl = null;
 	public ?string $SuccessUrl = null;
@@ -57,8 +59,9 @@ class CreditCardPaymentView extends DataTransferObject
 	 * 0: SV
 	 * 1: EN
 	 * 2: FI
+	 * @var string|int
 	 */
-	public int $Language;
+	public $Language;
 	public ?string $Funding = null;
 	public ?string $Brand = null;
 }

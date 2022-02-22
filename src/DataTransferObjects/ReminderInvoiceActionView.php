@@ -30,8 +30,9 @@ class ReminderInvoiceActionView extends DataTransferObject
 	 * 22: SalesRequestedCancelled
 	 * 23: SalesRequestedDenied
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Stage;
+	public $Stage;
 	public ?array $ReminderInvoices = null;
 	public ?AmountView $CurrentValue = null;
 	public ?AmountView $ReminderFee = null;

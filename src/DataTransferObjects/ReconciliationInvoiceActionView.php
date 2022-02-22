@@ -22,15 +22,17 @@ class ReconciliationInvoiceActionView extends DataTransferObject
 	 * 4: EInvoice
 	 * 5: Kivra
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DeliveryMethod;
+	public $DeliveryMethod;
 
 	/**
 	 * 0: SV
 	 * 1: EN
 	 * 2: FI
+	 * @var string|int
 	 */
-	public int $CommunicationLanguage;
+	public $CommunicationLanguage;
 	public ?string $InvoiceNumber = null;
 	public ?string $OCR = null;
 	public ?AmountView $InvoicedAmount = null;

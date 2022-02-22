@@ -17,8 +17,9 @@ class SelfInvoiceActionStateView extends DataTransferObject
 	 * 18: PaymentSent
 	 * 19: PaymentCancelled
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Stage;
+	public $Stage;
 
 	/** Format: date-time */
 	public ?string $InvoiceSentDate = null;

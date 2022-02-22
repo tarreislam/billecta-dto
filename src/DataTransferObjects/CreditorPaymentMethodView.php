@@ -10,8 +10,9 @@ class CreditorPaymentMethodView extends DataTransferObject
 	 * 0: Primary
 	 * 1: Alternative
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Priority;
+	public $Priority;
 
 	/**
 	 * 0: BankGiro
@@ -19,8 +20,9 @@ class CreditorPaymentMethodView extends DataTransferObject
 	 * 2: BankAccount
 	 * 3: IBAN
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $PaymentMethod;
+	public $PaymentMethod;
 	public ?string $BankgiroNo = null;
 	public ?string $PlusgiroNo = null;
 	public ?string $ClearingNo = null;

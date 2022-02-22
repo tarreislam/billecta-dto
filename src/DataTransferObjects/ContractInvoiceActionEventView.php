@@ -106,8 +106,9 @@ class ContractInvoiceActionEventView extends DataTransferObject
 	 * 996: PublicCommentByAdmin
 	 * 998: Archived
 	 * 1000: Unknown
+	 * @var string|int
 	 */
-	public int $EventType;
+	public $EventType;
 	public bool $IsPublic;
 	public bool $HasOccured;
 

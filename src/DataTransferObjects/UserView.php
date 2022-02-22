@@ -17,8 +17,9 @@ class UserView extends DataTransferObject
 	 * 0: SV
 	 * 1: EN
 	 * 2: FI
+	 * @var string|int
 	 */
-	public int $Language;
+	public $Language;
 	public bool $PasswordExpired;
 	public bool $PasswordNeverExpires;
 	public ?string $Password = null;

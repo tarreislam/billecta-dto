@@ -106,8 +106,9 @@ class CommonActionEventView extends DataTransferObject
 	 * 996: PublicCommentByAdmin
 	 * 998: Archived
 	 * 1000: Unknown
+	 * @var string|int
 	 */
-	public int $EventType;
+	public $EventType;
 	public bool $IsPublic;
 	public bool $HasOccured;
 
@@ -134,6 +135,7 @@ class CommonActionEventView extends DataTransferObject
 	 * 13: OrderInvoiceAction
 	 * 14: PaymentAdviceAction
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $ActionType;
+	public $ActionType;
 }

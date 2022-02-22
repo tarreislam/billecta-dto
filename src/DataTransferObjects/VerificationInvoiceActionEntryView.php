@@ -28,8 +28,9 @@ class VerificationInvoiceActionEntryView extends DataTransferObject
 	 * 0: SV
 	 * 1: EN
 	 * 2: FI
+	 * @var string|int
 	 */
-	public int $CommunicationLanguage;
+	public $CommunicationLanguage;
 	public ?string $Message = null;
 	public ?string $InvoiceNumber = null;
 	public ?InvoiceBookkeepingOverrideView $BookkeepingOverride = null;

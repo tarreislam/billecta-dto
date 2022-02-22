@@ -31,8 +31,9 @@ class UnhandledPaymentView extends DataTransferObject
 	 * 1: OverPayment
 	 * 2: ManualBalance
 	 * 3: BalanceFromInvoice
+	 * @var string|int
 	 */
-	public int $UnhandledPaymentType;
+	public $UnhandledPaymentType;
 	public ?OverpaymentDetailsView $OverpaymentDetails = null;
 	public ?array $AdditionalInformations = null;
 
@@ -43,8 +44,9 @@ class UnhandledPaymentView extends DataTransferObject
 	 * 4: Deleted
 	 * 5: RepaymentPending
 	 * 6: Repaid
+	 * @var string|int
 	 */
-	public int $State;
+	public $State;
 
 	/** Format: guid */
 	public ?string $DebtorPublicId = null;

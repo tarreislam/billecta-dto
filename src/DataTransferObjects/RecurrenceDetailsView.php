@@ -11,8 +11,9 @@ class RecurrenceDetailsView extends DataTransferObject
 	 * 1: Yearly
 	 * 2: Quarterly
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $RecurrenceInterval;
+	public $RecurrenceInterval;
 	public ?MonthlyRecurrenceView $MonthlyRecurrence = null;
 	public ?YearlyRecurrenceView $YearlyRecurrence = null;
 	public ?QuarterlyRecurrenceView $QuarterlyRecurrence = null;

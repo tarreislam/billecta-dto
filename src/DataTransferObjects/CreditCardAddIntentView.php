@@ -15,6 +15,7 @@ class CreditCardAddIntentView extends DataTransferObject
 	 * 0: SV
 	 * 1: EN
 	 * 2: FI
+	 * @var string|int
 	 */
-	public int $Language;
+	public $Language;
 }

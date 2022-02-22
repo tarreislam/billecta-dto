@@ -37,6 +37,7 @@ class CreditorView extends DataTransferObject
 	/**
 	 * 0: BankGiro
 	 * 1: CAMT
+	 * @var string|int
 	 */
-	public int $PaymentReconciliationType;
+	public $PaymentReconciliationType;
 }

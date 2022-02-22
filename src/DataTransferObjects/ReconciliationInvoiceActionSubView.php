@@ -27,8 +27,9 @@ class ReconciliationInvoiceActionSubView extends DataTransferObject
 	 * 12: InvoiceSent
 	 * 16: SentToDebtCollection
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $Stage;
+	public $Stage;
 
 	/**
 	 * 0: Email
@@ -38,8 +39,9 @@ class ReconciliationInvoiceActionSubView extends DataTransferObject
 	 * 4: EInvoice
 	 * 5: Kivra
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DeliveryMethod;
+	public $DeliveryMethod;
 
 	/**
 	 * 0: DebtCollectionAction
@@ -57,8 +59,9 @@ class ReconciliationInvoiceActionSubView extends DataTransferObject
 	 * 13: OrderInvoiceAction
 	 * 14: PaymentAdviceAction
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $ActionType;
+	public $ActionType;
 
 	/** Format: date-time */
 	public ?string $ClosedDate = null;

@@ -23,15 +23,17 @@ class DebtCollectionActionView extends DataTransferObject
 	 * 4: EInvoice
 	 * 5: Kivra
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DeliveryMethod;
+	public $DeliveryMethod;
 
 	/**
 	 * 0: SV
 	 * 1: EN
 	 * 2: FI
+	 * @var string|int
 	 */
-	public int $CommunicationLanguage;
+	public $CommunicationLanguage;
 	public ?string $ReasonDescription = null;
 
 	/** Format: int32 */
@@ -43,8 +45,9 @@ class DebtCollectionActionView extends DataTransferObject
 	 * 2: DebtCollection
 	 * 3: Bailiff
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $StartDebtCollectionActionLevel;
+	public $StartDebtCollectionActionLevel;
 
 	/**
 	 * 0: LatePaymentFee
@@ -52,8 +55,9 @@ class DebtCollectionActionView extends DataTransferObject
 	 * 2: DebtCollection
 	 * 3: Bailiff
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $EndDebtCollectionActionLevel;
+	public $EndDebtCollectionActionLevel;
 
 	/** Format: date-time */
 	public string $OriginalInvoiceDate;
@@ -76,8 +80,9 @@ class DebtCollectionActionView extends DataTransferObject
 	 * 1: AboveEffectiveReference
 	 * 2: NoInterest
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $InterestType;
+	public $InterestType;
 	public ?string $OurReference = null;
 	public ?string $YourReference = null;
 
@@ -99,8 +104,9 @@ class DebtCollectionActionView extends DataTransferObject
 	 * 2: InvoiceAction
 	 * 3: ReconciliationInvoiceAction
 	 * -1: Unknown
+	 * @var string|int
 	 */
-	public int $DebtCollectionActionSource;
+	public $DebtCollectionActionSource;
 	public ?DeliveryAddressOverrideView $DeliveryAddressOverride = null;
 	public ?array $Events = null;
 	public bool $CanCancel;
