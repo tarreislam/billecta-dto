@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "CreditorShareView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "SharedWithUserName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "SharePublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "CreditorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "CanAttestInvoice": {
+      "type": "boolean"
+    },
+    "CanManageInvoicePayments": {
+      "type": "boolean"
+    },
+    "CanWriteCreditor": {
+      "type": "boolean"
+    },
+    "CanAttestSupplierInvoice": {
+      "type": "boolean"
+    },
+    "CanManageSelfInvoiceDebtorInfoes": {
+      "type": "boolean"
+    },
+    "CanPaySupplierInvoice": {
+      "type": "boolean"
+    },
+    "CanReadSettings": {
+      "type": "boolean"
+    },
+    "CanReadBookkeeping": {
+      "type": "boolean"
+    }
+  }
+}

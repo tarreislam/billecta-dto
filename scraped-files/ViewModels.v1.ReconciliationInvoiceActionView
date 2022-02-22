@@ -1,0 +1,610 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ReconciliationInvoiceActionView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ActionPublicId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "CreditorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "Debtor": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/ReconciliationDebtorView"
+        }
+      ]
+    },
+    "State": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/ReconciliationInvoiceActionStateView"
+        }
+      ]
+    },
+    "ReminderInvoices": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/ReconciliationInvoiceActionReminderView"
+      }
+    },
+    "DeliveryMethod": {
+      "$ref": "#/definitions/DeliveryMethodTypeView"
+    },
+    "CommunicationLanguage": {
+      "$ref": "#/definitions/LanguageTypeView"
+    },
+    "InvoiceNumber": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "OCR": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "InvoicedAmount": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/AmountView"
+        }
+      ]
+    },
+    "CurrentAmount": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/AmountView"
+        }
+      ]
+    },
+    "CurrentReminderFees": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/AmountView"
+        }
+      ]
+    },
+    "ExternalReference": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "InvoiceFile": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/FileView"
+        }
+      ]
+    },
+    "ExternalUrl": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Events": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/ReconciliationInvoiceActionEventView"
+      }
+    },
+    "Created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "SendWithColor": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "SendAsPriorityMail": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "DebtCollectionActionPublicId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "AutogiroWithdrawalDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "CreditCardWithdrawalDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    }
+  },
+  "definitions": {
+    "ReconciliationDebtorView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "DebtorNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "OrgNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CountryCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Email": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Phone": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "ReconciliationInvoiceActionStateView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Stage": {
+          "$ref": "#/definitions/ReconciliationInvoiceActionStageTypeView"
+        },
+        "IsPayed": {
+          "type": "boolean"
+        },
+        "ClosedDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "InvoiceSentDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "InvoiceWasIncludedInEmail": {
+          "type": "boolean"
+        },
+        "CreditCardPaymentPublicId": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "guid"
+        },
+        "SwishPaymentPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "ReconciliationInvoiceActionStageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "None",
+        "Created",
+        "Completed",
+        "InvoiceSent",
+        "SentToDebtCollection",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        6,
+        12,
+        16,
+        -1
+      ]
+    },
+    "ReconciliationInvoiceActionReminderView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "File": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/FileView"
+            }
+          ]
+        },
+        "Created": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "FileView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "FilePublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "ContentType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Data": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "byte"
+        },
+        "FileName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "DeliveryMethodTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Email",
+        "Mail",
+        "Manually",
+        "SMS",
+        "EInvoice",
+        "Kivra",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        -1
+      ]
+    },
+    "LanguageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "SV",
+        "EN",
+        "FI"
+      ],
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
+    "AmountView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ValueForView": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "ReconciliationInvoiceActionEventView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Title": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Content": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "EventDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "EventBy": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Reference": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "EventType": {
+          "$ref": "#/definitions/EventTypeView"
+        },
+        "IsPublic": {
+          "type": "boolean"
+        },
+        "HasOccured": {
+          "type": "boolean"
+        },
+        "EventPublicId": {
+          "type": "string",
+          "format": "guid"
+        }
+      }
+    },
+    "EventTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Created",
+        "Attested",
+        "InvoiceSent",
+        "Paid",
+        "Credited",
+        "InvoiceDue",
+        "WillBeSentToDebtCollection",
+        "SentToDebtCollection",
+        "Cancelled",
+        "CommentedByDebtor",
+        "CommentedByCreditor",
+        "ReadByUser",
+        "Paused",
+        "Resumed",
+        "Disputed",
+        "UnDisputed",
+        "SmsSent",
+        "SmsWillBeSent",
+        "DebtCollectionSent",
+        "ManagedForBailiffRegistration",
+        "WillBeManagedForBailiffRegistration",
+        "WillSendDebtCollectionInvoice",
+        "WillSendReminderInvoice",
+        "OriginalInvoiceDue",
+        "ReminderDue",
+        "DebtCollectionDue",
+        "WillSendPartialInvoice",
+        "InstallmentPlanPartialInvoiceSent",
+        "Completed",
+        "PartialInvoiceDue",
+        "ManagedForReturnToDebtCollection",
+        "Updated",
+        "PaymentWillBeMade",
+        "MadeManual",
+        "PaymentCancelled",
+        "PaymentSent",
+        "AwatingPaymentAcknowledgment",
+        "ReminderInvoiceSent",
+        "WillSendInvoice",
+        "Moved",
+        "EmailEvent",
+        "UnAttested",
+        "InvoiceSold",
+        "InvoiceSaleRequestDenied",
+        "AwaitingInvoiceSaleRequestResponse",
+        "InvoiceSaleRequestCancelled",
+        "InvoiceSaleRequested",
+        "AutogiroPaymentPostponed",
+        "AutogiroCancelledWithdrawal",
+        "AutogiroApprovalAdded",
+        "AutogiroApprovalChanged",
+        "AutogiroApprovalRemoved",
+        "AutogiroWithdrawal",
+        "WillSendLatePaymentInvoice",
+        "OverPayment",
+        "FuturePayment",
+        "EInvoiceRegistered",
+        "EInvoiceUnregistered",
+        "EInvoiceWasRejected",
+        "WrittenOff",
+        "LongTermSurveilance",
+        "AppendixAdded",
+        "AppendixCleared",
+        "SmsEvent",
+        "InstallmentPlanRequested",
+        "SentToBailiff",
+        "SentToBailiffExecution",
+        "CreditCardAdded",
+        "CreditCardRemoved",
+        "CreditCardWithdrawal",
+        "CreditCardCancelledWithdrawal",
+        "VerdictNumberObtained",
+        "ManagedForBailiffEnforcementRegistration",
+        "PaymentRefunded",
+        "MessageSendToSocialWelfare",
+        "ForeignSentToLocalRepresentative",
+        "ChangedOwner",
+        "CreditorCommentByAdmin",
+        "ForeignMakeReadyForLocalRepresentative",
+        "SupplementSentToKFM",
+        "EInvoiceEvent",
+        "DebtorContractSigned",
+        "DebtorContractSent",
+        "DebtorContractArchived",
+        "DebtorContractFinanced",
+        "FinancierRequested",
+        "BalanceFromInvoice",
+        "EvictionMessageSentToDebtor",
+        "PublicCommentByAdmin",
+        "Archived",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        19,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        996,
+        998,
+        1000
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ListOfInvoiceTextTemplateView",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/InvoiceTextTemplateView"
+  },
+  "definitions": {
+    "InvoiceTextTemplateView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "InvoiceTextTemplatePublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "Description": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}

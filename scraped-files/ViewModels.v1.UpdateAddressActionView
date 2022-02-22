@@ -1,0 +1,152 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "UpdateAddressActionView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ActionPublicId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Attention": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "CareOf": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Address": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Address2": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ZipCode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Email": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "City": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Phone": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "OrgNo": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "GLN": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Intermediator": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/IntermediatorTypeView"
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "IntermediatorTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "ITELLA",
+        "TIETOSE",
+        "LOGICA",
+        "PROCEEDO",
+        "HUSERA",
+        "BASWARE",
+        "EDB",
+        "STRALFORS1",
+        "LIAISON_FI",
+        "EXPERT",
+        "ESSESESS",
+        "HANDSESS",
+        "DABASESS",
+        "SWEDSESS",
+        "NDEASESS",
+        "INEXCHANGE",
+        "SCANCLOUD",
+        "PAGERO",
+        "CREDIFLOW",
+        "PEPPOL",
+        "COMPELLO",
+        "LOGIQ",
+        "APIX",
+        "AKSESSPUNKT",
+        "FININVOICE",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        -1
+      ]
+    }
+  }
+}

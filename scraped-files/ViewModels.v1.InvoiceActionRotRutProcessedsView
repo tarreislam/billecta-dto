@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ListOfInvoiceActionRotRutProcessedView",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/InvoiceActionRotRutProcessedView"
+  },
+  "definitions": {
+    "InvoiceActionRotRutProcessedView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Processed": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "ProcessedBy": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}

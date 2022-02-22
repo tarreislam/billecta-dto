@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ListOfCurrencyView",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/CurrencyView"
+  },
+  "definitions": {
+    "CurrencyView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Decimals": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Iso4217": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Description": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "OneUnit": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}

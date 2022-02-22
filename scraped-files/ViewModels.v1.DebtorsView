@@ -1,0 +1,721 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "DebtorsView",
+  "definitions": {
+    "DebtorView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "DebtorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "DebtorExternalId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "OrgNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Attention": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CareOf": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Address": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Address2": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "ZipCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "City": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CountryCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CitizenshipCountryCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Phone": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Email": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "ContactName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "ContactEmail": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "VatNumber": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "DebtorNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "GLN": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "IsActive": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "ProtectedIdentity": {
+          "type": "boolean"
+        },
+        "DebtorType": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/DebtorTypeView"
+            }
+          ]
+        },
+        "Intermediator": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/IntermediatorTypeView"
+            }
+          ]
+        },
+        "EInvoiceBank": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/EInvoiceBankTypeView"
+            }
+          ]
+        },
+        "Notes": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "DebtorSelfInvoiceInfo": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/DebtorSelfInvoiceInfoView"
+            }
+          ]
+        },
+        "DefaultActionConfig": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/DebtorDefaultActionConfigView"
+            }
+          ]
+        },
+        "Autogiro": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/DebtorAutogiroView"
+            }
+          ]
+        },
+        "CreditCards": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/DebtorCreditCardView"
+          }
+        },
+        "Created": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "DebtorTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Private",
+        "Company",
+        "Undefined"
+      ],
+      "enum": [
+        0,
+        1,
+        -1
+      ]
+    },
+    "IntermediatorTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "ITELLA",
+        "TIETOSE",
+        "LOGICA",
+        "PROCEEDO",
+        "HUSERA",
+        "BASWARE",
+        "EDB",
+        "STRALFORS1",
+        "LIAISON_FI",
+        "EXPERT",
+        "ESSESESS",
+        "HANDSESS",
+        "DABASESS",
+        "SWEDSESS",
+        "NDEASESS",
+        "INEXCHANGE",
+        "SCANCLOUD",
+        "PAGERO",
+        "CREDIFLOW",
+        "PEPPOL",
+        "COMPELLO",
+        "LOGIQ",
+        "APIX",
+        "AKSESSPUNKT",
+        "FININVOICE",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        -1
+      ]
+    },
+    "EInvoiceBankTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "OEB",
+        "SEB",
+        "SHB",
+        "SKB",
+        "FSPA",
+        "NB",
+        "LFB",
+        "FINN",
+        "ICA",
+        "SYD",
+        "DNB",
+        "SBF",
+        "AAB",
+        "DBF",
+        "SEBF",
+        "SHBF",
+        "NBF",
+        "FRX",
+        "MARG",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        -1
+      ]
+    },
+    "DebtorSelfInvoiceInfoView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "NextSelfInvoiceNumber": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "PaymentMethod": {
+          "$ref": "#/definitions/DebtorPaymentMethodView"
+        },
+        "BankgiroNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "PlusgiroNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "AccountNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "ClearingNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "IBAN": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "BIC": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "ApprovedCompanyTax": {
+          "type": "boolean"
+        }
+      }
+    },
+    "DebtorPaymentMethodView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "BankGiro",
+        "PlusGiro",
+        "BankAccount",
+        "IBAN",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        -1
+      ]
+    },
+    "DebtorDefaultActionConfigView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ActivateDefaultActionConfigOverride": {
+          "type": "boolean"
+        },
+        "StartDebtCollectionActionLevel": {
+          "$ref": "#/definitions/DebtCollectionActionLevelTypeView"
+        },
+        "EndDebtCollectionActionLevel": {
+          "$ref": "#/definitions/DebtCollectionActionLevelTypeView"
+        },
+        "DeliveryMethod": {
+          "$ref": "#/definitions/DeliveryMethodTypeView"
+        },
+        "CommunicationLanguage": {
+          "$ref": "#/definitions/LanguageTypeView"
+        },
+        "PaymentTermsInDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "DebtCollectionPaymentTermsInDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "InterestTermsInDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "InterestPercentage": {
+          "type": "number",
+          "format": "double"
+        },
+        "InvoicePaymentTermsInDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "InterestType": {
+          "$ref": "#/definitions/InterestTypeView"
+        },
+        "InterestStartInDaysAfterDueDate": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "ReasonForHigherInterest": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "OurReference": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "NumberOfReminders": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "SendInvoiceToDebtCollectionAfterDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "SendInvoiceToDebtCollection": {
+          "type": "boolean"
+        },
+        "IncludePdfInEmail": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "SendReminderInvoice": {
+          "type": "boolean"
+        },
+        "SendReminderInvoiceDaysAfterDueDate": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "InvoiceFee": {
+          "type": "number",
+          "format": "double"
+        },
+        "ReminderInvoiceFee": {
+          "type": "number",
+          "format": "double"
+        },
+        "SendByMailIfEmailNotViewedInDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "SendByMailIfEmailNotViewedInDaysEnabled": {
+          "type": "boolean"
+        },
+        "ReminderInvoicePaymentTermsInDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "InvoiceComment": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "DebtCollectionActionLevelTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "LatePaymentFee",
+        "Reminders",
+        "DebtCollection",
+        "Bailiff",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        -1
+      ]
+    },
+    "DeliveryMethodTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Email",
+        "Mail",
+        "Manually",
+        "SMS",
+        "EInvoice",
+        "Kivra",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        -1
+      ]
+    },
+    "LanguageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "SV",
+        "EN",
+        "FI"
+      ],
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
+    "InterestTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Fixed",
+        "AboveEffectiveReference",
+        "NoInterest",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        -1
+      ]
+    },
+    "DebtorAutogiroView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Active": {
+          "type": "boolean"
+        },
+        "AccountNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "ClearingNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Stage": {
+          "$ref": "#/definitions/AutogiroStageTypeView"
+        },
+        "PayerNumber": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "PaymentServiceSupplier": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "AutogiroFirstWithdrawalDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        }
+      }
+    },
+    "AutogiroStageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Pending",
+        "Approved",
+        "Failed",
+        "Removed",
+        "Migration"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        100
+      ]
+    },
+    "DebtorCreditCardView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CreditCardPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "Created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Expires": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "MaskedCardNumber": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Brand": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/DebtorView"
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "SortingField": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Ascending": {
+          "type": "boolean"
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    }
+  ]
+}

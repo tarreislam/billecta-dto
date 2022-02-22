@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ListOfCreditorSubView",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/CreditorSubView"
+  },
+  "definitions": {
+    "CreditorSubView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "Name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "IsEnabled": {
+          "type": "boolean"
+        },
+        "OrgNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "LogoURL": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}

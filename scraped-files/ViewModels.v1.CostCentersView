@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ListOfCostCenterView",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/CostCenterView"
+  },
+  "definitions": {
+    "CostCenterView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "Code": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Kod"
+        },
+        "Description": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Beskrivning"
+        },
+        "Comments": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Anteckningar"
+        },
+        "Active": {
+          "type": "boolean",
+          "description": "Aktiv"
+        }
+      }
+    }
+  }
+}

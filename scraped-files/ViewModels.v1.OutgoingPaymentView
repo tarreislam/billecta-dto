@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "OutgoingPaymentView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "CreditorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "ReceivingPaymentMethod": {
+      "$ref": "#/definitions/ReceivingPaymentMethodTypeView"
+    },
+    "SendingBankgiroNo": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ReceivingBankgiroNo": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ReceivingPlusgiroNo": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ReceivingClearingNo": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ReceivingAccountNo": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ReceiverName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "PaymentDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "Amount": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/AmountView"
+        }
+      ]
+    },
+    "Reference": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "IsSalaryPayment": {
+      "type": "boolean"
+    },
+    "BankIdReferenceToken": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "guid"
+    }
+  },
+  "definitions": {
+    "ReceivingPaymentMethodTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "BankGiro",
+        "PlusGiro",
+        "BankAccount",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        -1
+      ]
+    },
+    "AmountView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ValueForView": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ListOfDebtorBalanceView",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/DebtorBalanceView"
+  },
+  "definitions": {
+    "DebtorBalanceView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "DebtorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "TransactionDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Amount": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "BalanceType": {
+          "$ref": "#/definitions/DebtorBalanceTypeView"
+        },
+        "Description": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "AmountView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ValueForView": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "DebtorBalanceTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "OpeningBalance",
+        "Invoice",
+        "SelfInvoice",
+        "OverPayment",
+        "BalanceFromInvoice",
+        "ManualBalance",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        10,
+        11,
+        20,
+        21,
+        22,
+        -1
+      ]
+    }
+  }
+}

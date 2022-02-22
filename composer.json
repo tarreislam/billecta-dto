@@ -1,0 +1,21 @@
+{
+    "name": "tarre/billecta-dto",
+    "description": "DataTransferObjects for Billectas API. Scraped from their site",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tarre",
+            "email": "tarre@uniguide.se"
+        }
+    ],
+    "require": {
+        "spatie/data-transfer-object": "^3.0|^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tarre\\Billecta\\": "src"
+        }
+    },
+    "minimum-stability": "stable"
+}

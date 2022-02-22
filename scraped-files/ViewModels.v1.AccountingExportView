@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "AccountingExportView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "CreditorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "Start": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "End": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "Created": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "CreatedBy": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Format": {
+      "$ref": "#/definitions/AccountingExportFormatTypeView"
+    },
+    "DateSelectionType": {
+      "$ref": "#/definitions/AccountingExportDateSelectionTypeView"
+    },
+    "File": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/FileView"
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "AccountingExportFormatTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "SIE4",
+        "CSV",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        -1
+      ]
+    },
+    "AccountingExportDateSelectionTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "EventDate",
+        "TransactionDate",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        -1
+      ]
+    },
+    "FileView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "FilePublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "ContentType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Data": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "byte"
+        },
+        "FileName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}

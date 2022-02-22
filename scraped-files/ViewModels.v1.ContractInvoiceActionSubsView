@@ -1,0 +1,232 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ContractInvoiceActionSubsView",
+  "definitions": {
+    "ContractInvoiceActionSubView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "DebtorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "CostCenter": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorOrgNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Avsändare"
+        },
+        "Amount": {
+          "description": "Återstående belopp",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "Created": {
+          "type": "string",
+          "description": "Skapades",
+          "format": "date-time"
+        },
+        "DebtorOrgNo": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Org.nr."
+        },
+        "DebtorName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Kund"
+        },
+        "LastRunDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Senaste körning",
+          "format": "date-time"
+        },
+        "NextRunDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Nästa körning",
+          "format": "date-time"
+        },
+        "IsPaused": {
+          "type": "boolean"
+        },
+        "DeliveryMethod": {
+          "description": "Leveranssätt",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/DeliveryMethodTypeView"
+            }
+          ]
+        },
+        "RecurrenceInterval": {
+          "$ref": "#/definitions/RecurrenceIntervalTypeView"
+        },
+        "ContractNumber": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Avtalsnummer"
+        },
+        "Start": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Startdatum",
+          "format": "date-time"
+        },
+        "End": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Slutdatum",
+          "format": "date-time"
+        },
+        "OurReference": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Vår referens"
+        },
+        "AutogiroWithdrawalEnabled": {
+          "type": "boolean",
+          "description": "Dras med autogiro"
+        }
+      }
+    },
+    "AmountView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ValueForView": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "DeliveryMethodTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Email",
+        "Mail",
+        "Manually",
+        "SMS",
+        "EInvoice",
+        "Kivra",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        -1
+      ]
+    },
+    "RecurrenceIntervalTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Monthly",
+        "Yearly",
+        "Quarterly",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        -1
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ContractInvoiceActionSubView"
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "SortingField": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Ascending": {
+          "type": "boolean"
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    }
+  ]
+}

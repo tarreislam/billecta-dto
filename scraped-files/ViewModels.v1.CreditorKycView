@@ -1,0 +1,407 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "CreditorKycView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "CreditorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "CreditorKycForm": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/CreditorKycFormView"
+        }
+      ]
+    },
+    "State": {
+      "$ref": "#/definitions/CreditorKycStateTypeView"
+    },
+    "SignedByName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "SignedBySSN": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "SignedDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "MobileBankIdTokenUsedForSign": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "guid"
+    }
+  },
+  "definitions": {
+    "CreditorKycFormView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Company": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/CreditorKycFormCompanyView"
+            }
+          ]
+        },
+        "Contact": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/CreditorKycFormContactView"
+            }
+          ]
+        },
+        "IsTaxableInUS": {
+          "type": "boolean"
+        },
+        "IsFinancialInstitute": {
+          "type": "boolean"
+        },
+        "IsActiveNonFinancialInstitute": {
+          "type": "boolean"
+        },
+        "IsAnyOwnerUsPersons": {
+          "type": "boolean"
+        },
+        "UsPersons": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/CreditorKycFormUsPersonView"
+          }
+        },
+        "IsManagingCash": {
+          "type": "boolean"
+        },
+        "ManagingCashPurpose": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "ManagingCashYearlyRevenue": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "IsManagingCurrenyExchanges": {
+          "type": "boolean"
+        },
+        "ManagingCurrenyExchangesPurpose": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "BusinessCategory": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/CreditorKycFormBusinessCategoryView"
+            }
+          ]
+        },
+        "HasNoOwnersWithMoreThan25Percent": {
+          "type": "boolean"
+        },
+        "OwnersWithMoreThan25Percent": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/CreditorKycFormOwnerView"
+          }
+        },
+        "HasNoBeneficialOwners": {
+          "type": "boolean"
+        },
+        "BeneficialOwners": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/CreditorKycFormBeneficialOwnerView"
+          }
+        },
+        "IsAnyonePEP": {
+          "type": "boolean"
+        },
+        "HasAnyoneBusinessRelationWithOtherPEP": {
+          "type": "boolean"
+        }
+      }
+    },
+    "CreditorKycFormCompanyView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "OrgNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Address": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "ZipCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "City": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CountryName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "CreditorKycFormContactView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CitizenshipCountryName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "TaxCountryName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Email": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Phone": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "CreditorKycFormUsPersonView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Address": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "TIN": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "CreditorKycFormBusinessCategoryView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "IsRealEstateSalesCategory": {
+          "type": "boolean"
+        },
+        "IsRealEstateConstructionCategory": {
+          "type": "boolean"
+        },
+        "IsRestaurantCategory": {
+          "type": "boolean"
+        },
+        "IsCafeCategory": {
+          "type": "boolean"
+        },
+        "IsBrokerCategory": {
+          "type": "boolean"
+        },
+        "IsNightClubCategory": {
+          "type": "boolean"
+        },
+        "IsKioskCategory": {
+          "type": "boolean"
+        },
+        "IsOnlineGambilingCategory": {
+          "type": "boolean"
+        },
+        "IsCleaningCategory": {
+          "type": "boolean"
+        },
+        "IsTaxiCategory": {
+          "type": "boolean"
+        },
+        "IsBarberCategory": {
+          "type": "boolean"
+        },
+        "IsBettingShopCategory": {
+          "type": "boolean"
+        },
+        "OtherCategory": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "CreditorKycFormOwnerView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "SSN": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "HoldingSharesInPercent": {
+          "type": "number",
+          "format": "double"
+        },
+        "HoldingVotesInPercent": {
+          "type": "number",
+          "format": "double"
+        },
+        "Address": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CountryName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "IsNonLegalEntity": {
+          "type": "boolean"
+        },
+        "HasUsCitizenship": {
+          "type": "boolean"
+        },
+        "NonLegalEntityIsDirectOWner": {
+          "type": "boolean"
+        }
+      }
+    },
+    "CreditorKycFormBeneficialOwnerView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "SSN": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Address": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CountryName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "CreditorKycStateTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Pending",
+        "Approved",
+        "Rejected",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        -1
+      ]
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "CreditCardAddView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "PublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "CreditorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "DebtorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "Status": {
+      "$ref": "#/definitions/CreditCardAddStatusTypeView"
+    },
+    "AddWindowUrl": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "SuccessUrl": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "FailureUrl": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "Language": {
+      "$ref": "#/definitions/LanguageTypeView"
+    }
+  },
+  "definitions": {
+    "CreditCardAddStatusTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Pending",
+        "Succeeded",
+        "Failed",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        -1
+      ]
+    },
+    "LanguageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "SV",
+        "EN",
+        "FI"
+      ],
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    }
+  }
+}

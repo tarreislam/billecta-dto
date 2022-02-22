@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RegisterReconciliationPaymentView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ActionPublicId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Amount": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/AmountView"
+        }
+      ]
+    },
+    "WriteOff": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/AmountView"
+        }
+      ]
+    },
+    "Comment": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "WriteOffVat": {
+      "type": "number",
+      "format": "double"
+    },
+    "PaymentMeanCode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "AmountIsCredit": {
+      "type": "boolean"
+    }
+  },
+  "definitions": {
+    "AmountView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ValueForView": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    }
+  }
+}

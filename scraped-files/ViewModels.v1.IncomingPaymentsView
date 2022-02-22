@@ -1,0 +1,199 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ListOfIncomingPaymentView",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/IncomingPaymentView"
+  },
+  "definitions": {
+    "IncomingPaymentView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "InvoiceNumber": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Fakturanummer"
+        },
+        "ActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "ActionType": {
+          "$ref": "#/definitions/ActionTypeView"
+        },
+        "DebtorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "DebtorName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Kund"
+        },
+        "Amount": {
+          "description": "Belopp",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "CreatedDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "PaymentDate": {
+          "type": "string",
+          "description": "Betaldatum",
+          "format": "date-time"
+        },
+        "PaymentMeanCode": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Betalsätt"
+        },
+        "File": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/FileView"
+            }
+          ]
+        },
+        "PaymentReferenceId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "ExternalReference": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Externt id"
+        },
+        "OCR": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Referens"
+        },
+        "CreatedBy": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Skapad av"
+        },
+        "IsReminderPayment": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ActionTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "DebtCollectionAction",
+        "InstallmentPlanAction",
+        "InvoiceAction",
+        "CreditInvoiceAction",
+        "ContractInvoiceAction",
+        "SelfInvoiceAction",
+        "VerificationInvoiceAction",
+        "DebentureAction",
+        "InterestInvoiceAction",
+        "SupplierInvoiceAction",
+        "ReconciliationInvoiceAction",
+        "OrderAction",
+        "OrderInvoiceAction",
+        "PaymentAdviceAction",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        -1
+      ]
+    },
+    "AmountView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ValueForView": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "FileView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "FilePublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "ContentType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Data": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "byte"
+        },
+        "FileName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}

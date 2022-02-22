@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "FileView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "FilePublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "ContentType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Data": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "byte"
+    },
+    "FileName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}

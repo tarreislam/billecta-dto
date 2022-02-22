@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ListOfAccountingVoucherRecordView",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/AccountingVoucherRecordView"
+  },
+  "definitions": {
+    "AccountingVoucherRecordView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Description": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "InvoiceNumber": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "TransactionDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Transactions": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/AccountingVoucherTransactionView"
+          }
+        }
+      }
+    },
+    "AccountingVoucherTransactionView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "DebetAmount": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "CreditAmount": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "Account": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CostCenter": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Project": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "AmountView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ValueForView": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    }
+  }
+}

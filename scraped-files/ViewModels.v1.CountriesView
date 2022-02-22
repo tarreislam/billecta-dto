@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ListOfCountryView",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/CountryView"
+  },
+  "definitions": {
+    "CountryView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CountryCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "SwedishCountryName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "EnglishCountryName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "PhoneCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}

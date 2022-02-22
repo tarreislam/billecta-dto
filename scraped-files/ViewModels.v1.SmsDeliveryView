@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SmsDeliveryView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "CreditorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "ReceiverPhone": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Message": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "CountryCode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}

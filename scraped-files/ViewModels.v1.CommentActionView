@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "CommentActionView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ActionPublicId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Comment": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Attachment": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/FileView"
+        }
+      ]
+    },
+    "Target": {
+      "$ref": "#/definitions/CommentTargetTypeView"
+    }
+  },
+  "definitions": {
+    "FileView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "FilePublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "ContentType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Data": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "byte"
+        },
+        "FileName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "CommentTargetTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Private",
+        "ToDebtor",
+        "ToBillecta",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        -1
+      ]
+    }
+  }
+}

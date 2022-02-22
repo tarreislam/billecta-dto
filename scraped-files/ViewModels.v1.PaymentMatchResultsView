@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ListOfPaymentMatchResultView",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/PaymentMatchResultView"
+  },
+  "definitions": {
+    "PaymentMatchResultView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "UnhandledPaymentPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "Successfull": {
+          "type": "boolean"
+        },
+        "ResponseMessage": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ProductsTemplateView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "CreditorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "DefaultSalesAccount": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "DefaultSalesEUAccount": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "DefaultSalesEUVATAccount": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "DefaultSalesNonEUAccount": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "DefaultPurchaseEUAccount": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "DefaultPurchaseEUVATAccount": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "DefaultPurchaseNonEUAccount": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "DefaultSalesVAT": {
+      "type": "number",
+      "format": "double"
+    },
+    "DefaultSalesUnits": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "DefaultPurchaseAccount": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "DefaultVATAccount": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "DefaultPurchaseVATAccount": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "DefaultProductType": {
+      "$ref": "#/definitions/ProductTypeView"
+    }
+  },
+  "definitions": {
+    "ProductTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Service",
+        "Commodity",
+        "Package",
+        "VAT",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        -1
+      ]
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SwishPaymentStatusView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "PaymentRequestToken": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Status": {
+      "$ref": "#/definitions/SwishStatusTypeView"
+    },
+    "PaidDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "Created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "Amount": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/AmountView"
+        }
+      ]
+    },
+    "RefundedAmount": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/AmountView"
+        }
+      ]
+    },
+    "ErrorMessage": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ErrorCode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  },
+  "definitions": {
+    "SwishStatusTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Created",
+        "Declined",
+        "Error",
+        "Paid",
+        "Cancelled",
+        "Refunded",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        -1
+      ]
+    },
+    "AmountView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ValueForView": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    }
+  }
+}

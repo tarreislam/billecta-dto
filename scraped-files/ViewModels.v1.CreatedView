@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "CreatedView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "PublicId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}

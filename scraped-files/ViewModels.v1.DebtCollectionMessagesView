@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ListOfDebtCollectionMessageView",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/DebtCollectionMessageView"
+  },
+  "definitions": {
+    "DebtCollectionMessageView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "PublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "Message": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "IsActive": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "CreditorTokenView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "Token": {
+      "type": "string",
+      "format": "guid"
+    },
+    "PortalURL": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}

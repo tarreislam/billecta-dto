@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ListOfUserSubscribedInvoiceView",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/UserSubscribedInvoiceView"
+  },
+  "definitions": {
+    "UserSubscribedInvoiceView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "UserPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "ActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}

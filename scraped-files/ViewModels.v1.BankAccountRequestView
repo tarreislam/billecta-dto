@@ -1,0 +1,207 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "BankAccountRequestView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "PublicId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Bank": {
+      "$ref": "#/definitions/BankAccountBankTypeView"
+    },
+    "SSN": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "QR": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Status": {
+      "$ref": "#/definitions/BankAccountStatusTypeView"
+    },
+    "AccountNumbers": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/BankAccountView"
+      }
+    },
+    "BankIdAutostartToken": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "IsBankIdAutostartTokenRequired": {
+      "type": "boolean"
+    },
+    "FailureMessage": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "FailureCode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  },
+  "definitions": {
+    "BankAccountBankTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "OEB",
+        "SHB",
+        "ICA",
+        "LFB",
+        "NB",
+        "SBAB",
+        "SEB",
+        "SKB",
+        "SYD",
+        "FSPA",
+        "FSPASB",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        -1
+      ]
+    },
+    "BankAccountStatusTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Waiting",
+        "Success",
+        "Failed",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        -1
+      ]
+    },
+    "BankAccountView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Number": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "ClearingNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "AccountNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Type": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "AutogiroCompatible": {
+          "$ref": "#/definitions/AutogiroCompatibleTypeView"
+        },
+        "Balance": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "Iban": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "HolderName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "AutogiroCompatibleTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Approved",
+        "Unapproved",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
+    "AmountView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ValueForView": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    }
+  }
+}

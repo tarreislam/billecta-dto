@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "StreamView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "Data": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "byte"
+    }
+  }
+}

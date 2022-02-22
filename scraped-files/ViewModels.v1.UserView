@@ -1,0 +1,176 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "UserView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "Username": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Email": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "UserPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "FullName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Language": {
+      "$ref": "#/definitions/LanguageTypeView"
+    },
+    "PasswordExpired": {
+      "type": "boolean"
+    },
+    "PasswordNeverExpires": {
+      "type": "boolean"
+    },
+    "Password": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "IsEnabled": {
+      "type": "boolean"
+    },
+    "Rights": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/UserRightView"
+      }
+    },
+    "IsAdministrator": {
+      "type": "boolean"
+    },
+    "IsApiUser": {
+      "type": "boolean"
+    },
+    "CanManageCreditors": {
+      "type": "boolean"
+    },
+    "HideSelectCreditorDialog": {
+      "type": "boolean"
+    },
+    "HideSystemUpdates": {
+      "type": "boolean"
+    },
+    "HideLookupDialog": {
+      "type": "boolean"
+    },
+    "ActiveCreditorPublicId": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "guid"
+    },
+    "LastLogin": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "Created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "HasAcceptedAgreements": {
+      "type": "boolean"
+    },
+    "ReceiveSystemUpdateNotification": {
+      "type": "boolean"
+    }
+  },
+  "definitions": {
+    "LanguageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "SV",
+        "EN",
+        "FI"
+      ],
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
+    "UserRightView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "CanReadCreditor": {
+          "type": "boolean"
+        },
+        "IncludeCreditorOnStartPage": {
+          "type": "boolean"
+        },
+        "CanWriteCreditor": {
+          "type": "boolean"
+        },
+        "CanAttestInvoice": {
+          "type": "boolean"
+        },
+        "CanManageInvoicePayments": {
+          "type": "boolean"
+        },
+        "CanSellInvoice": {
+          "type": "boolean"
+        },
+        "CanSalesFinance": {
+          "type": "boolean"
+        },
+        "CanAttestSupplierInvoice": {
+          "type": "boolean"
+        },
+        "CanPaySupplierInvoice": {
+          "type": "boolean"
+        },
+        "CanManageInvoices": {
+          "type": "boolean"
+        },
+        "CanManageDebtCollections": {
+          "type": "boolean"
+        },
+        "CanManageSelfInvoices": {
+          "type": "boolean"
+        },
+        "CanManageSelfInvoiceDebtorInfoes": {
+          "type": "boolean"
+        },
+        "CanManageSupplierInvoices": {
+          "type": "boolean"
+        },
+        "CanManageFinances": {
+          "type": "boolean"
+        },
+        "CanReadSettings": {
+          "type": "boolean"
+        },
+        "CanReadBookkeeping": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

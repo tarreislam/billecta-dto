@@ -1,0 +1,116 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "YearlyAutogiroContractInvoiceView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "CreditorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "Name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Address": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Address2": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ZipCode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "City": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Email": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Phone": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "DebtorExternalId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "SSN": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ClearingNumber": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "AccountNumber": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Bank": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Amount": {
+      "type": "number",
+      "format": "double"
+    },
+    "WithdrawalDay": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "WithdrawalMonth": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "EndDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "StartDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "EnableAutomaticReminder": {
+      "type": "boolean"
+    },
+    "EnableAutomaticDebtCollection": {
+      "type": "boolean"
+    }
+  }
+}

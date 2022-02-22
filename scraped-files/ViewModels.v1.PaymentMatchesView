@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ListOfPaymentMatchView",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/PaymentMatchView"
+  },
+  "definitions": {
+    "PaymentMatchView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "UnhandledPaymentPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "ActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "PaymentDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

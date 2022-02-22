@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ReminderInvoiceActionSubsView",
+  "definitions": {
+    "ReminderInvoiceActionSubView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "SourceActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CurrentFeeAmount": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "SourceCurrentAmount": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "SourceOriginalAmount": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "LastReminderDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "LastReminderDueDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "AmountView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ValueForView": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ReminderInvoiceActionSubView"
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "SortingField": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Ascending": {
+          "type": "boolean"
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    }
+  ]
+}

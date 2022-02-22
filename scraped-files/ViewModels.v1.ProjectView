@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ProjectView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "CreditorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "ProjectNumber": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "Projektnummer"
+    },
+    "Description": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "Beskrivning"
+    },
+    "ProjectLeader": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "Projektledare"
+    },
+    "ContactPerson": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "Kontaktperson"
+    },
+    "Comments": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "Anteckningar"
+    },
+    "StartDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "Startdatum",
+      "format": "date-time"
+    },
+    "EndDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "Slutdatum",
+      "format": "date-time"
+    },
+    "Status": {
+      "description": "Status",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ProjectStatusTypeView"
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "ProjectStatusTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "NotStarted",
+        "Ongoing",
+        "Compelted",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        -1
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ListOfAccountingPaymentMeanView",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/AccountingPaymentMeanView"
+  },
+  "definitions": {
+    "AccountingPaymentMeanView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "PaymentCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Description": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "BookkeepingAccount": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ProductsView",
+  "definitions": {
+    "ProductView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ProductPublicId": {
+          "type": "string",
+          "description": "Billecta id",
+          "format": "guid"
+        },
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "ArticleNumber": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Artikelnummer"
+        },
+        "ProductExternalId": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Externt id"
+        },
+        "Description": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Beskrivning"
+        },
+        "Units": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Enhet"
+        },
+        "IsActive": {
+          "type": "boolean",
+          "description": "Aktiv"
+        },
+        "UnitPrice": {
+          "type": "number",
+          "description": "Pris",
+          "format": "double"
+        },
+        "VAT": {
+          "type": "number",
+          "description": "Moms",
+          "format": "double"
+        },
+        "BookKeepingAccount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Intäktskonto",
+          "format": "int32"
+        },
+        "BookKeepingSalesEUAccount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Intäktskonto (EU ej momspliktig)",
+          "format": "int32"
+        },
+        "BookKeepingSalesEUVATAccount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Intäktskonto (EU momspliktig)",
+          "format": "int32"
+        },
+        "BookKeepingSalesNonEUAccount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Intäktskonto (Icke-EU)",
+          "format": "int32"
+        },
+        "BookKeepingPurchaseAccount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Kostnadskonto",
+          "format": "int32"
+        },
+        "BookKeepingVATAccount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Utgående moms",
+          "format": "int32"
+        },
+        "BookKeepingPurchaseVATAccount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Ingående moms",
+          "format": "int32"
+        },
+        "ProductType": {
+          "description": "Produkttyp",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/ProductTypeView"
+            }
+          ]
+        },
+        "ConfigurationCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "ProductTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Service",
+        "Commodity",
+        "Package",
+        "VAT",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        -1
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ProductView"
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "SortingField": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Ascending": {
+          "type": "boolean"
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    }
+  ]
+}

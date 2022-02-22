@@ -1,0 +1,271 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SearchView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "SearchValue": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "DebtorPublicIds": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string",
+        "format": "guid"
+      }
+    },
+    "ProductPublicIds": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string",
+        "format": "guid"
+      }
+    },
+    "Status": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/ActionSearchStatusTypeView"
+      }
+    },
+    "Types": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/ActionTypeView"
+      }
+    },
+    "RotRut": {
+      "$ref": "#/definitions/RotRutSearchFilterTypeView"
+    },
+    "CreditorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "InvoiceDateFrom": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "InvoiceDateTo": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "DueDateFrom": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "DueDateTo": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "CreatedDateFrom": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "CreatedDateTo": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "AttestedDateFrom": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "AttestedDateTo": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "ClosedDateFrom": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "ClosedDateTo": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "PeriodDateFrom": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "PeriodDateTo": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "Project": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "CostCenter": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "DebtorName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "DebtorExternalId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "OrgNo": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ProductName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ProductExternalId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ArticleNumber": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "SearchOnAllCreditors": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    }
+  },
+  "definitions": {
+    "ActionSearchStatusTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "All",
+        "Open",
+        "Closed",
+        "WithInvoiceReminder",
+        "WithoutInvoiceReminder",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        -1
+      ]
+    },
+    "ActionTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "DebtCollectionAction",
+        "InstallmentPlanAction",
+        "InvoiceAction",
+        "CreditInvoiceAction",
+        "ContractInvoiceAction",
+        "SelfInvoiceAction",
+        "VerificationInvoiceAction",
+        "DebentureAction",
+        "InterestInvoiceAction",
+        "SupplierInvoiceAction",
+        "ReconciliationInvoiceAction",
+        "OrderAction",
+        "OrderInvoiceAction",
+        "PaymentAdviceAction",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        -1
+      ]
+    },
+    "RotRutSearchFilterTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "NoFilter",
+        "ROT",
+        "RUT"
+      ],
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    }
+  }
+}

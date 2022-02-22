@@ -1,0 +1,193 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ListOfCreditCardPaymentView",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/CreditCardPaymentView"
+  },
+  "definitions": {
+    "CreditCardPaymentView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "PaymentPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "Status": {
+          "$ref": "#/definitions/CreditCardPaymentStatusTypeView"
+        },
+        "Amount": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "RefundedAmount": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "PaymentDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "ActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "ActionType": {
+          "$ref": "#/definitions/ActionTypeView"
+        },
+        "Comment": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "PaymentWindowUrl": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "SuccessUrl": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "FailureUrl": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Language": {
+          "$ref": "#/definitions/LanguageTypeView"
+        },
+        "Funding": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Brand": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "CreditCardPaymentStatusTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Pending",
+        "Succeeded",
+        "Failed",
+        "Refunded",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        -1
+      ]
+    },
+    "AmountView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ValueForView": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "ActionTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "DebtCollectionAction",
+        "InstallmentPlanAction",
+        "InvoiceAction",
+        "CreditInvoiceAction",
+        "ContractInvoiceAction",
+        "SelfInvoiceAction",
+        "VerificationInvoiceAction",
+        "DebentureAction",
+        "InterestInvoiceAction",
+        "SupplierInvoiceAction",
+        "ReconciliationInvoiceAction",
+        "OrderAction",
+        "OrderInvoiceAction",
+        "PaymentAdviceAction",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        -1
+      ]
+    },
+    "LanguageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "SV",
+        "EN",
+        "FI"
+      ],
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    }
+  }
+}

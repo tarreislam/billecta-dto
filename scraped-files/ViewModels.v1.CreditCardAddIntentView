@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "CreditCardAddIntentView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "DebtorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "SuccessUrl": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "FailureUrl": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Language": {
+      "$ref": "#/definitions/LanguageTypeView"
+    }
+  },
+  "definitions": {
+    "LanguageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "SV",
+        "EN",
+        "FI"
+      ],
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    }
+  }
+}

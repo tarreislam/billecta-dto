@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ListOfDebtorAutogiroApprovalView",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/DebtorAutogiroApprovalView"
+  },
+  "definitions": {
+    "DebtorAutogiroApprovalView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Active": {
+          "type": "boolean"
+        },
+        "AutoGiroApprovalXML": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}

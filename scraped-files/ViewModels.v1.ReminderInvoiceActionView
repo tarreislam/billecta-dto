@@ -1,0 +1,254 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ReminderInvoiceActionView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ActionPublicId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "SourceActionPublicId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ClosedDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "Stage": {
+      "$ref": "#/definitions/InvoiceActionStageTypeView"
+    },
+    "ReminderInvoices": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/ReminderInvoiceActionInvoiceView"
+      }
+    },
+    "CurrentValue": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/AmountView"
+        }
+      ]
+    },
+    "ReminderFee": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/AmountView"
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "InvoiceActionStageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "None",
+        "Created",
+        "ReminderInvoiceSent",
+        "Manual",
+        "Completed",
+        "Cancelled",
+        "InvoiceSent",
+        "Attested",
+        "SentToDebtCollection",
+        "SalesRequested",
+        "SaleRequestAccepted",
+        "SalesRequestedCancelled",
+        "SalesRequestedDenied",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        5,
+        6,
+        7,
+        12,
+        13,
+        16,
+        20,
+        21,
+        22,
+        23,
+        -1
+      ]
+    },
+    "ReminderInvoiceActionInvoiceView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "InvoiceDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "DueDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "InvoiceNumber": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "InvoiceDecription": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "PaymentTermsInDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "OurReference": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "YourReference": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Address": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Address2": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "ZipCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "City": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CountryCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "InvoicedAmount": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "InvoiceFile": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/FileView"
+            }
+          ]
+        },
+        "OCR": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "AmountView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ValueForView": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "FileView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "FilePublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "ContentType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Data": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "byte"
+        },
+        "FileName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}

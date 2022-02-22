@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "BankIdAuthenticationRequestView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "CreditorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "SSN": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "TokenStartRequired": {
+      "type": "boolean"
+    }
+  }
+}

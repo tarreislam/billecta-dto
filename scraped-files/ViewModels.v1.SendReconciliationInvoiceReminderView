@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SendReconciliationInvoiceReminderView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ReconciliationInvoiceActionPublicId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "DeliveryMethod": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/DeliveryMethodTypeView"
+        }
+      ]
+    },
+    "ReminderFee": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/AmountView"
+        }
+      ]
+    },
+    "ReminderFile": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/FileView"
+        }
+      ]
+    },
+    "SendWithColor": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "SendAsPriorityMail": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    }
+  },
+  "definitions": {
+    "DeliveryMethodTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Email",
+        "Mail",
+        "Manually",
+        "SMS",
+        "EInvoice",
+        "Kivra",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        -1
+      ]
+    },
+    "AmountView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ValueForView": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "FileView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "FilePublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "ContentType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Data": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "byte"
+        },
+        "FileName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}
