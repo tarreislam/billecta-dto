@@ -19,10 +19,62 @@ class InvoiceActionSubView extends DataTransferObject
 	public ?string $DebtorName = null;
 	public ?AmountView $CurrentAmount = null;
 	public ?AmountView $InvoicedAmount = null;
-	public InvoiceActionStageTypeView $Stage;
-	public ActionTypeView $ActionType;
-	public DeliveryMethodTypeView $DeliveryMethod;
-	public DeliveryStatusTypeView $DeliveryStatus;
+
+	/**
+	 * 0: None
+	 * 1: Created
+	 * 2: ReminderInvoiceSent
+	 * 5: Manual
+	 * 6: Completed
+	 * 7: Cancelled
+	 * 12: InvoiceSent
+	 * 13: Attested
+	 * 16: SentToDebtCollection
+	 * 20: SalesRequested
+	 * 21: SaleRequestAccepted
+	 * 22: SalesRequestedCancelled
+	 * 23: SalesRequestedDenied
+	 * -1: Unknown
+	 */
+	public int $Stage;
+
+	/**
+	 * 0: DebtCollectionAction
+	 * 1: InstallmentPlanAction
+	 * 2: InvoiceAction
+	 * 3: CreditInvoiceAction
+	 * 5: ContractInvoiceAction
+	 * 6: SelfInvoiceAction
+	 * 7: VerificationInvoiceAction
+	 * 8: DebentureAction
+	 * 9: InterestInvoiceAction
+	 * 10: SupplierInvoiceAction
+	 * 11: ReconciliationInvoiceAction
+	 * 12: OrderAction
+	 * 13: OrderInvoiceAction
+	 * 14: PaymentAdviceAction
+	 * -1: Unknown
+	 */
+	public int $ActionType;
+
+	/**
+	 * 0: Email
+	 * 1: Mail
+	 * 2: Manually
+	 * 3: SMS
+	 * 4: EInvoice
+	 * 5: Kivra
+	 * -1: Unknown
+	 */
+	public int $DeliveryMethod;
+
+	/**
+	 * 0: Unknown
+	 * 1: Received
+	 * 2: Opened
+	 * 3: Viewed
+	 */
+	public int $DeliveryStatus;
 
 	/** Format: date-time */
 	public ?string $ClosedDate = null;

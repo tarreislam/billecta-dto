@@ -7,7 +7,17 @@ use Spatie\DataTransferObject\DataTransferObject;
 class SendReminderInvoiceView extends DataTransferObject
 {
 	public ?string $InvoiceActionPublicId = null;
-	public ?DeliveryMethodTypeView $DeliveryMethod = null;
+
+	/**
+	 * 0: Email
+	 * 1: Mail
+	 * 2: Manually
+	 * 3: SMS
+	 * 4: EInvoice
+	 * 5: Kivra
+	 * -1: Unknown
+	 */
+	public ?int $DeliveryMethod = null;
 	public ?AmountView $ReminderFee = null;
 
 	/** Format: byte */

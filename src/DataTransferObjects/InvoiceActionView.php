@@ -10,11 +10,27 @@ class InvoiceActionView extends DataTransferObject
 
 	/** Format: guid */
 	public string $CreditorPublicId;
-	public LanguageTypeView $CommunicationLanguage;
+
+	/**
+	 * 0: SV
+	 * 1: EN
+	 * 2: FI
+	 */
+	public int $CommunicationLanguage;
 
 	/** Format: date-time */
 	public string $Created;
-	public DeliveryMethodTypeView $DeliveryMethod;
+
+	/**
+	 * 0: Email
+	 * 1: Mail
+	 * 2: Manually
+	 * 3: SMS
+	 * 4: EInvoice
+	 * 5: Kivra
+	 * -1: Unknown
+	 */
+	public int $DeliveryMethod;
 	public ?DebtorView $Debtor = null;
 	public ?InvoiceActionStateView $State = null;
 	public ?array $Invoices = null;
@@ -36,7 +52,14 @@ class InvoiceActionView extends DataTransferObject
 	/** Format: int32 */
 	public int $InterestTermsInDays;
 	public float $InterestPercentage;
-	public InterestTypeView $InterestType;
+
+	/**
+	 * 0: Fixed
+	 * 1: AboveEffectiveReference
+	 * 2: NoInterest
+	 * -1: Unknown
+	 */
+	public int $InterestType;
 	public ?string $OurReference = null;
 	public ?string $YourReference = null;
 
@@ -84,7 +107,25 @@ class InvoiceActionView extends DataTransferObject
 	public ?string $ReasonForHigherInterest = null;
 	public ?array $Appendixes = null;
 	public ?array $Attachments = null;
-	public ActionTypeView $ActionType;
+
+	/**
+	 * 0: DebtCollectionAction
+	 * 1: InstallmentPlanAction
+	 * 2: InvoiceAction
+	 * 3: CreditInvoiceAction
+	 * 5: ContractInvoiceAction
+	 * 6: SelfInvoiceAction
+	 * 7: VerificationInvoiceAction
+	 * 8: DebentureAction
+	 * 9: InterestInvoiceAction
+	 * 10: SupplierInvoiceAction
+	 * 11: ReconciliationInvoiceAction
+	 * 12: OrderAction
+	 * 13: OrderInvoiceAction
+	 * 14: PaymentAdviceAction
+	 * -1: Unknown
+	 */
+	public int $ActionType;
 	public ?AmountView $InvoiceFee = null;
 	public ?AmountView $FreightFee = null;
 	public bool $VatIsIncluded;

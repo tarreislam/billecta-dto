@@ -8,10 +8,42 @@ class DefaultActionConfigView extends DataTransferObject
 {
 	/** Format: guid */
 	public string $CreditorPublicId;
-	public DebtCollectionActionLevelTypeView $StartDebtCollectionActionLevel;
-	public DebtCollectionActionLevelTypeView $EndDebtCollectionActionLevel;
-	public DeliveryMethodTypeView $DeliveryMethod;
-	public LanguageTypeView $CommunicationLanguage;
+
+	/**
+	 * 0: LatePaymentFee
+	 * 1: Reminders
+	 * 2: DebtCollection
+	 * 3: Bailiff
+	 * -1: Unknown
+	 */
+	public int $StartDebtCollectionActionLevel;
+
+	/**
+	 * 0: LatePaymentFee
+	 * 1: Reminders
+	 * 2: DebtCollection
+	 * 3: Bailiff
+	 * -1: Unknown
+	 */
+	public int $EndDebtCollectionActionLevel;
+
+	/**
+	 * 0: Email
+	 * 1: Mail
+	 * 2: Manually
+	 * 3: SMS
+	 * 4: EInvoice
+	 * 5: Kivra
+	 * -1: Unknown
+	 */
+	public int $DeliveryMethod;
+
+	/**
+	 * 0: SV
+	 * 1: EN
+	 * 2: FI
+	 */
+	public int $CommunicationLanguage;
 
 	/** Format: int32 */
 	public int $PaymentTermsInDays;
@@ -25,7 +57,14 @@ class DefaultActionConfigView extends DataTransferObject
 
 	/** Format: int32 */
 	public int $InvoicePaymentTermsInDays;
-	public InterestTypeView $InterestType;
+
+	/**
+	 * 0: Fixed
+	 * 1: AboveEffectiveReference
+	 * 2: NoInterest
+	 * -1: Unknown
+	 */
+	public int $InterestType;
 
 	/** Format: int32 */
 	public int $InterestStartInDaysAfterDueDate;

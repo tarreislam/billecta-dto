@@ -8,7 +8,14 @@ class OutgoingPaymentView extends DataTransferObject
 {
 	/** Format: guid */
 	public string $CreditorPublicId;
-	public ReceivingPaymentMethodTypeView $ReceivingPaymentMethod;
+
+	/**
+	 * 0: BankGiro
+	 * 1: PlusGiro
+	 * 2: BankAccount
+	 * -1: Unknown
+	 */
+	public int $ReceivingPaymentMethod;
 	public ?string $SendingBankgiroNo = null;
 	public ?string $ReceivingBankgiroNo = null;
 	public ?string $ReceivingPlusgiroNo = null;

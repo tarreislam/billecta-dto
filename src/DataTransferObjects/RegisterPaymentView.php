@@ -16,6 +16,13 @@ class RegisterPaymentView extends DataTransferObject
 	public float $WriteOffVat;
 	public ?string $OverrideWriteOffAccount = null;
 	public ?string $PaymentMeanCode = null;
-	public RegisterPaymentOverShootingAmountHandlingTypeView $OvershootingAmountHandling;
+
+	/**
+	 * 0: None
+	 * 1: AsCurrencyDifference
+	 * 2: AsOverPayments
+	 * -1: Unknown
+	 */
+	public int $OvershootingAmountHandling;
 	public ?string $PaymentReferenceText = null;
 }

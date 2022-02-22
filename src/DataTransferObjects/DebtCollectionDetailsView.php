@@ -7,8 +7,24 @@ use Spatie\DataTransferObject\DataTransferObject;
 class DebtCollectionDetailsView extends DataTransferObject
 {
 	public bool $SendToDebtCollection;
-	public DebtCollectionActionLevelTypeView $StartDebtCollectionActionLevel;
-	public DebtCollectionActionLevelTypeView $EndDebtCollectionActionLevel;
+
+	/**
+	 * 0: LatePaymentFee
+	 * 1: Reminders
+	 * 2: DebtCollection
+	 * 3: Bailiff
+	 * -1: Unknown
+	 */
+	public int $StartDebtCollectionActionLevel;
+
+	/**
+	 * 0: LatePaymentFee
+	 * 1: Reminders
+	 * 2: DebtCollection
+	 * 3: Bailiff
+	 * -1: Unknown
+	 */
+	public int $EndDebtCollectionActionLevel;
 
 	/** Format: int32 */
 	public int $NumberOfReminders;

@@ -14,12 +14,25 @@ class CreditCardAddView extends DataTransferObject
 
 	/** Format: guid */
 	public string $DebtorPublicId;
-	public CreditCardAddStatusTypeView $Status;
+
+	/**
+	 * 0: Pending
+	 * 1: Succeeded
+	 * 2: Failed
+	 * -1: Unknown
+	 */
+	public int $Status;
 	public ?string $AddWindowUrl = null;
 	public ?string $SuccessUrl = null;
 	public ?string $FailureUrl = null;
 
 	/** Format: date-time */
 	public string $Created;
-	public LanguageTypeView $Language;
+
+	/**
+	 * 0: SV
+	 * 1: EN
+	 * 2: FI
+	 */
+	public int $Language;
 }

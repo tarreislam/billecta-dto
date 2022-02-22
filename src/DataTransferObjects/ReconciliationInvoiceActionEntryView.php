@@ -9,8 +9,24 @@ class ReconciliationInvoiceActionEntryView extends DataTransferObject
 	/** Format: guid */
 	public string $CreditorPublicId;
 	public ?ReconciliationDebtorView $Debtor = null;
-	public DeliveryMethodTypeView $DeliveryMethod;
-	public LanguageTypeView $CommunicationLanguage;
+
+	/**
+	 * 0: Email
+	 * 1: Mail
+	 * 2: Manually
+	 * 3: SMS
+	 * 4: EInvoice
+	 * 5: Kivra
+	 * -1: Unknown
+	 */
+	public int $DeliveryMethod;
+
+	/**
+	 * 0: SV
+	 * 1: EN
+	 * 2: FI
+	 */
+	public int $CommunicationLanguage;
 	public ?string $ExternalUrl = null;
 	public ?string $InvoiceNumber = null;
 	public ?string $OCR = null;

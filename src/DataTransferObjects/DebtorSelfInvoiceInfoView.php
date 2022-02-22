@@ -7,7 +7,15 @@ use Spatie\DataTransferObject\DataTransferObject;
 class DebtorSelfInvoiceInfoView extends DataTransferObject
 {
 	public ?string $NextSelfInvoiceNumber = null;
-	public DebtorPaymentMethodView $PaymentMethod;
+
+	/**
+	 * 0: BankGiro
+	 * 1: PlusGiro
+	 * 2: BankAccount
+	 * 3: IBAN
+	 * -1: Unknown
+	 */
+	public int $PaymentMethod;
 	public ?string $BankgiroNo = null;
 	public ?string $PlusgiroNo = null;
 	public ?string $AccountNo = null;

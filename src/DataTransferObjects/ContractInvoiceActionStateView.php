@@ -6,7 +6,13 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class ContractInvoiceActionStateView extends DataTransferObject
 {
-	public ContractInvoiceActionStageTypeView $Stage;
+	/**
+	 * 0: None
+	 * 1: Created
+	 * 17: InvoiceCreated
+	 * -1: Unknown
+	 */
+	public int $Stage;
 
 	/** Format: date-time */
 	public ?string $LastRunDate = null;

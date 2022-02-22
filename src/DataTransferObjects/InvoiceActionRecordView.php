@@ -18,7 +18,13 @@ class InvoiceActionRecordView extends DataTransferObject
 	public ?AmountView $UnitPrice = null;
 	public ?AmountView $DiscountAmount = null;
 	public float $DiscountPercentage;
-	public DiscountTypeView $DiscountType;
+
+	/**
+	 * 0: Amount
+	 * 1: Percentage
+	 * -1: Unknown
+	 */
+	public int $DiscountType;
 	public float $VAT;
 	public ?string $CostCenter = null;
 
@@ -34,8 +40,35 @@ class InvoiceActionRecordView extends DataTransferObject
 
 	/** Format: int32 */
 	public int $RotRutHours;
-	public RotRutTypeView $RotRutType;
-	public RecordTypeView $RecordType;
+
+	/**
+	 * 0: Construction
+	 * 1: Electricity
+	 * 2: GlassMetalWork
+	 * 3: GroundDrainageWork
+	 * 4: Masonry
+	 * 5: PaintingWallpapering
+	 * 6: Hvac
+	 * 100: BabySitting
+	 * 101: Moving
+	 * 102: ITServices
+	 * 103: TextileClothing
+	 * 104: PersonalCare
+	 * 105: SnowPlowing
+	 * 106: Cleaning
+	 * 107: Gardening
+	 * 108: WhiteGoods
+	 * -1: Unknown
+	 */
+	public int $RotRutType;
+
+	/**
+	 * 0: Standard
+	 * 1: Message
+	 * 2: Package
+	 * -1: Unknown
+	 */
+	public int $RecordType;
 	public bool $VatIsIncluded;
 	public bool $Hidden;
 	public ?string $ExternalReference = null;

@@ -15,5 +15,11 @@ class AccountingVoucherExportCreationView extends DataTransferObject
 	/** Format: date-time */
 	public string $To;
 	public ?array $BookKeepingTypesFilter = null;
-	public AccountingExportDateSelectionTypeView $DateSelectionType;
+
+	/**
+	 * 0: EventDate
+	 * 1: TransactionDate
+	 * -1: Unknown
+	 */
+	public int $DateSelectionType;
 }

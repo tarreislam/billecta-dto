@@ -18,9 +18,22 @@ class SelfInvoiceActionRecordView extends DataTransferObject
 	public ?AmountView $UnitPrice = null;
 	public ?AmountView $DiscountAmount = null;
 	public float $DiscountPercentage;
-	public DiscountTypeView $DiscountType;
+
+	/**
+	 * 0: Amount
+	 * 1: Percentage
+	 * -1: Unknown
+	 */
+	public int $DiscountType;
 	public float $VAT;
-	public RecordTypeView $RecordType;
+
+	/**
+	 * 0: Standard
+	 * 1: Message
+	 * 2: Package
+	 * -1: Unknown
+	 */
+	public int $RecordType;
 	public ?string $CostCenter = null;
 	public ?string $Project = null;
 	public bool $Hidden;

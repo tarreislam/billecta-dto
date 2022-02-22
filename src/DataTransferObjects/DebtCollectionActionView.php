@@ -14,14 +14,46 @@ class DebtCollectionActionView extends DataTransferObject
 	/** Format: guid */
 	public string $CreditorPublicId;
 	public ?DebtorView $Debtor = null;
-	public DeliveryMethodTypeView $DeliveryMethod;
-	public LanguageTypeView $CommunicationLanguage;
+
+	/**
+	 * 0: Email
+	 * 1: Mail
+	 * 2: Manually
+	 * 3: SMS
+	 * 4: EInvoice
+	 * 5: Kivra
+	 * -1: Unknown
+	 */
+	public int $DeliveryMethod;
+
+	/**
+	 * 0: SV
+	 * 1: EN
+	 * 2: FI
+	 */
+	public int $CommunicationLanguage;
 	public ?string $ReasonDescription = null;
 
 	/** Format: int32 */
 	public int $NumberOfReminders;
-	public DebtCollectionActionLevelTypeView $StartDebtCollectionActionLevel;
-	public DebtCollectionActionLevelTypeView $EndDebtCollectionActionLevel;
+
+	/**
+	 * 0: LatePaymentFee
+	 * 1: Reminders
+	 * 2: DebtCollection
+	 * 3: Bailiff
+	 * -1: Unknown
+	 */
+	public int $StartDebtCollectionActionLevel;
+
+	/**
+	 * 0: LatePaymentFee
+	 * 1: Reminders
+	 * 2: DebtCollection
+	 * 3: Bailiff
+	 * -1: Unknown
+	 */
+	public int $EndDebtCollectionActionLevel;
 
 	/** Format: date-time */
 	public string $OriginalInvoiceDate;
@@ -38,7 +70,14 @@ class DebtCollectionActionView extends DataTransferObject
 	/** Format: int32 */
 	public int $InterestTermsInDays;
 	public float $InterestPercentage;
-	public InterestTypeView $InterestType;
+
+	/**
+	 * 0: Fixed
+	 * 1: AboveEffectiveReference
+	 * 2: NoInterest
+	 * -1: Unknown
+	 */
+	public int $InterestType;
 	public ?string $OurReference = null;
 	public ?string $YourReference = null;
 
@@ -53,7 +92,15 @@ class DebtCollectionActionView extends DataTransferObject
 	public ?array $Invoices = null;
 	public ?string $InstallmentPlanPublicId = null;
 	public ?string $InvoiceSourcePublicId = null;
-	public ActionSourceTypeView $DebtCollectionActionSource;
+
+	/**
+	 * 0: None
+	 * 1: DebtCollectionAction
+	 * 2: InvoiceAction
+	 * 3: ReconciliationInvoiceAction
+	 * -1: Unknown
+	 */
+	public int $DebtCollectionActionSource;
 	public ?DeliveryAddressOverrideView $DeliveryAddressOverride = null;
 	public ?array $Events = null;
 	public bool $CanCancel;

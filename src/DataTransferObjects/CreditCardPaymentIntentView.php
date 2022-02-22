@@ -9,5 +9,11 @@ class CreditCardPaymentIntentView extends DataTransferObject
 	public ?string $ActionPublicId = null;
 	public ?string $SuccessUrl = null;
 	public ?string $FailureUrl = null;
-	public LanguageTypeView $Language;
+
+	/**
+	 * 0: SV
+	 * 1: EN
+	 * 2: FI
+	 */
+	public int $Language;
 }

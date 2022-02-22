@@ -14,7 +14,24 @@ class ReminderInvoiceActionView extends DataTransferObject
 
 	/** Format: date-time */
 	public ?string $ClosedDate = null;
-	public InvoiceActionStageTypeView $Stage;
+
+	/**
+	 * 0: None
+	 * 1: Created
+	 * 2: ReminderInvoiceSent
+	 * 5: Manual
+	 * 6: Completed
+	 * 7: Cancelled
+	 * 12: InvoiceSent
+	 * 13: Attested
+	 * 16: SentToDebtCollection
+	 * 20: SalesRequested
+	 * 21: SaleRequestAccepted
+	 * 22: SalesRequestedCancelled
+	 * 23: SalesRequestedDenied
+	 * -1: Unknown
+	 */
+	public int $Stage;
 	public ?array $ReminderInvoices = null;
 	public ?AmountView $CurrentValue = null;
 	public ?AmountView $ReminderFee = null;

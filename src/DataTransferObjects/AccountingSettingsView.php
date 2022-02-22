@@ -17,8 +17,31 @@ class AccountingSettingsView extends DataTransferObject
 	public bool $UsageOfUnmatchedPaymentIsBookedOnIncomingPaymentDate;
 	public bool $RestingVatIsEnabled;
 	public bool $FractionaryRevenuePeriodIsEnabled;
-	public ?SieKPTYPTypeView $SieKPTYP = null;
-	public FiscalYearTypeView $FiscalYear;
+
+	/**
+	 * 0: BAS95
+	 * 1: BAS96
+	 * 2: EUBAS97
+	 * 3: NE2007
+	 * -1: Unknown
+	 */
+	public ?int $SieKPTYP = null;
+
+	/**
+	 * 0: CalendarYear
+	 * 1: FebToJan
+	 * 2: MarToFeb
+	 * 3: AprToMar
+	 * 4: MayToApr
+	 * 5: JunToMay
+	 * 6: JulToJun
+	 * 7: AugToJul
+	 * 8: SepToAug
+	 * 9: OctToSep
+	 * 10: NovToOct
+	 * 11: DecToNov
+	 */
+	public int $FiscalYear;
 
 	/** Format: date-time */
 	public ?string $ExtendedFirstFiscalYearStartDate = null;
@@ -32,7 +55,13 @@ class AccountingSettingsView extends DataTransferObject
 	public ?string $DefaultCamtPaymentCode = null;
 	public ?string $DefaultSettlingOverpaymentPaymentCode = null;
 	public ?string $DefaultCreditingPaymentCode = null;
-	public BookKeepingMethodView $BookKeepingMethod;
+
+	/**
+	 * 0: InvoiceMethod
+	 * 1: CashMethod
+	 * -1: Unknown
+	 */
+	public int $BookKeepingMethod;
 
 	/** Format: int32 */
 	public ?int $LockPreviousPeriodsAtDay = null;

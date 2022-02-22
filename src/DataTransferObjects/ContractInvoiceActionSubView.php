@@ -29,8 +29,25 @@ class ContractInvoiceActionSubView extends DataTransferObject
 	/** Format: date-time */
 	public ?string $NextRunDate = null;
 	public bool $IsPaused;
-	public DeliveryMethodTypeView $DeliveryMethod;
-	public RecurrenceIntervalTypeView $RecurrenceInterval;
+
+	/**
+	 * 0: Email
+	 * 1: Mail
+	 * 2: Manually
+	 * 3: SMS
+	 * 4: EInvoice
+	 * 5: Kivra
+	 * -1: Unknown
+	 */
+	public int $DeliveryMethod;
+
+	/**
+	 * 0: Monthly
+	 * 1: Yearly
+	 * 2: Quarterly
+	 * -1: Unknown
+	 */
+	public int $RecurrenceInterval;
 	public ?string $ContractNumber = null;
 
 	/** Format: date-time */

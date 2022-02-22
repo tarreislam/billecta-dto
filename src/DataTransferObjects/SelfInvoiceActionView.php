@@ -10,11 +10,27 @@ class SelfInvoiceActionView extends DataTransferObject
 
 	/** Format: guid */
 	public string $CreditorPublicId;
-	public LanguageTypeView $CommunicationLanguage;
+
+	/**
+	 * 0: SV
+	 * 1: EN
+	 * 2: FI
+	 */
+	public int $CommunicationLanguage;
 
 	/** Format: date-time */
 	public string $Created;
-	public DeliveryMethodTypeView $DeliveryMethod;
+
+	/**
+	 * 0: Email
+	 * 1: Mail
+	 * 2: Manually
+	 * 3: SMS
+	 * 4: EInvoice
+	 * 5: Kivra
+	 * -1: Unknown
+	 */
+	public int $DeliveryMethod;
 	public ?DebtorView $Debtor = null;
 	public ?SelfInvoiceActionStateView $State = null;
 	public ?array $Invoices = null;
@@ -38,7 +54,13 @@ class SelfInvoiceActionView extends DataTransferObject
 	public ?string $ExternalId = null;
 	public ?string $BankgiroNo = null;
 	public ?string $TransferReference = null;
-	public ?ReferenceTypeView $TransferReferenceType = null;
+
+	/**
+	 * 0: None
+	 * 1: OCR
+	 * 2: Message
+	 */
+	public ?int $TransferReferenceType = null;
 	public ?AmountView $InvoicedAmount = null;
 	public ?AmountView $InterestAmount = null;
 	public ?AmountView $CurrentAmount = null;
@@ -56,5 +78,23 @@ class SelfInvoiceActionView extends DataTransferObject
 	public bool $CanCancel;
 	public ?array $Appendixes = null;
 	public ?array $Attachments = null;
-	public ActionTypeView $ActionType;
+
+	/**
+	 * 0: DebtCollectionAction
+	 * 1: InstallmentPlanAction
+	 * 2: InvoiceAction
+	 * 3: CreditInvoiceAction
+	 * 5: ContractInvoiceAction
+	 * 6: SelfInvoiceAction
+	 * 7: VerificationInvoiceAction
+	 * 8: DebentureAction
+	 * 9: InterestInvoiceAction
+	 * 10: SupplierInvoiceAction
+	 * 11: ReconciliationInvoiceAction
+	 * 12: OrderAction
+	 * 13: OrderInvoiceAction
+	 * 14: PaymentAdviceAction
+	 * -1: Unknown
+	 */
+	public int $ActionType;
 }

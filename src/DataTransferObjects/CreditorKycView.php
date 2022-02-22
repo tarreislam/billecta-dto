@@ -9,7 +9,14 @@ class CreditorKycView extends DataTransferObject
 	/** Format: guid */
 	public string $CreditorPublicId;
 	public ?CreditorKycFormView $CreditorKycForm = null;
-	public CreditorKycStateTypeView $State;
+
+	/**
+	 * 0: Pending
+	 * 1: Approved
+	 * 2: Rejected
+	 * -1: Unknown
+	 */
+	public int $State;
 	public ?string $SignedByName = null;
 	public ?string $SignedBySSN = null;
 

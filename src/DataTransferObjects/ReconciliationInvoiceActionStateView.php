@@ -6,7 +6,15 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class ReconciliationInvoiceActionStateView extends DataTransferObject
 {
-	public ReconciliationInvoiceActionStageTypeView $Stage;
+	/**
+	 * 0: None
+	 * 1: Created
+	 * 6: Completed
+	 * 12: InvoiceSent
+	 * 16: SentToDebtCollection
+	 * -1: Unknown
+	 */
+	public int $Stage;
 	public bool $IsPayed;
 
 	/** Format: date-time */

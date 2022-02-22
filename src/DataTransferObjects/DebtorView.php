@@ -31,9 +31,67 @@ class DebtorView extends DataTransferObject
 	public ?string $GLN = null;
 	public ?bool $IsActive = null;
 	public bool $ProtectedIdentity;
-	public ?DebtorTypeView $DebtorType = null;
-	public ?IntermediatorTypeView $Intermediator = null;
-	public ?EInvoiceBankTypeView $EInvoiceBank = null;
+
+	/**
+	 * 0: Private
+	 * 1: Company
+	 * -1: Undefined
+	 */
+	public ?int $DebtorType = null;
+
+	/**
+	 * 0: ITELLA
+	 * 1: TIETOSE
+	 * 2: LOGICA
+	 * 3: PROCEEDO
+	 * 4: HUSERA
+	 * 5: BASWARE
+	 * 6: EDB
+	 * 7: STRALFORS1
+	 * 8: LIAISON_FI
+	 * 9: EXPERT
+	 * 10: ESSESESS
+	 * 11: HANDSESS
+	 * 12: DABASESS
+	 * 13: SWEDSESS
+	 * 14: NDEASESS
+	 * 15: INEXCHANGE
+	 * 17: SCANCLOUD
+	 * 18: PAGERO
+	 * 19: CREDIFLOW
+	 * 20: PEPPOL
+	 * 21: COMPELLO
+	 * 22: LOGIQ
+	 * 23: APIX
+	 * 24: AKSESSPUNKT
+	 * 25: FININVOICE
+	 * -1: Unknown
+	 */
+	public ?int $Intermediator = null;
+
+	/**
+	 * 0: OEB
+	 * 1: SEB
+	 * 2: SHB
+	 * 3: SKB
+	 * 4: FSPA
+	 * 5: NB
+	 * 6: LFB
+	 * 7: FINN
+	 * 9: ICA
+	 * 10: SYD
+	 * 11: DNB
+	 * 12: SBF
+	 * 14: AAB
+	 * 15: DBF
+	 * 16: SEBF
+	 * 17: SHBF
+	 * 18: NBF
+	 * 19: FRX
+	 * 20: MARG
+	 * -1: Unknown
+	 */
+	public ?int $EInvoiceBank = null;
 	public ?string $Notes = null;
 	public ?DebtorSelfInvoiceInfoView $DebtorSelfInvoiceInfo = null;
 	public ?DebtorDefaultActionConfigView $DefaultActionConfig = null;

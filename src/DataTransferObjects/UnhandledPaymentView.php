@@ -25,10 +25,26 @@ class UnhandledPaymentView extends DataTransferObject
 	public string $PaymentDate;
 	public ?string $Reference = null;
 	public ?string $CreatedBy = null;
-	public UnhandledPaymentTypeView $UnhandledPaymentType;
+
+	/**
+	 * 0: UnmatchedPayment
+	 * 1: OverPayment
+	 * 2: ManualBalance
+	 * 3: BalanceFromInvoice
+	 */
+	public int $UnhandledPaymentType;
 	public ?OverpaymentDetailsView $OverpaymentDetails = null;
 	public ?array $AdditionalInformations = null;
-	public UnhandledPaymentStateTypeView $State;
+
+	/**
+	 * 0: Unhandled
+	 * 1: UsedOnInvoice
+	 * 2: UsedOnInvoiceInOtherCreditor
+	 * 4: Deleted
+	 * 5: RepaymentPending
+	 * 6: Repaid
+	 */
+	public int $State;
 
 	/** Format: guid */
 	public ?string $DebtorPublicId = null;

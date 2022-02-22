@@ -25,9 +25,32 @@ class ContractInvoiceActionView extends DataTransferObject
 	public float $InterestPercentage;
 	public ?string $OurReference = null;
 	public ?string $YourReference = null;
-	public DeliveryMethodTypeView $DeliveryMethod;
-	public LanguageTypeView $CommunicationLanguage;
-	public ?InterestTypeView $InterestType = null;
+
+	/**
+	 * 0: Email
+	 * 1: Mail
+	 * 2: Manually
+	 * 3: SMS
+	 * 4: EInvoice
+	 * 5: Kivra
+	 * -1: Unknown
+	 */
+	public int $DeliveryMethod;
+
+	/**
+	 * 0: SV
+	 * 1: EN
+	 * 2: FI
+	 */
+	public int $CommunicationLanguage;
+
+	/**
+	 * 0: Fixed
+	 * 1: AboveEffectiveReference
+	 * 2: NoInterest
+	 * -1: Unknown
+	 */
+	public ?int $InterestType = null;
 
 	/** Format: int32 */
 	public int $InterestStartInDaysAfterDueDate;
@@ -46,7 +69,15 @@ class ContractInvoiceActionView extends DataTransferObject
 	public ?array $Appendixes = null;
 	public ?array $Attachments = null;
 	public ?string $ContractNumber = null;
-	public ContractInvoicePeriodRuleTypeView $InvoicePeriod;
+
+	/**
+	 * 0: None
+	 * 1: Previous
+	 * 2: Current
+	 * 3: Next
+	 * -1: Unknown
+	 */
+	public int $InvoicePeriod;
 
 	/** Format: int32 */
 	public int $InvoicePeriodMonthsOffset;
@@ -61,5 +92,23 @@ class ContractInvoiceActionView extends DataTransferObject
 	public ?int $SendByMailIfEmailNotViewedInDays = null;
 	public ?array $Events = null;
 	public ?ReminderInvoiceDetailsView $ReminderInvoiceDetails = null;
-	public ActionTypeView $GenerateInvoicesOfActionType;
+
+	/**
+	 * 0: DebtCollectionAction
+	 * 1: InstallmentPlanAction
+	 * 2: InvoiceAction
+	 * 3: CreditInvoiceAction
+	 * 5: ContractInvoiceAction
+	 * 6: SelfInvoiceAction
+	 * 7: VerificationInvoiceAction
+	 * 8: DebentureAction
+	 * 9: InterestInvoiceAction
+	 * 10: SupplierInvoiceAction
+	 * 11: ReconciliationInvoiceAction
+	 * 12: OrderAction
+	 * 13: OrderInvoiceAction
+	 * 14: PaymentAdviceAction
+	 * -1: Unknown
+	 */
+	public int $GenerateInvoicesOfActionType;
 }

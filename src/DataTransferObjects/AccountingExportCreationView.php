@@ -15,7 +15,19 @@ class AccountingExportCreationView extends DataTransferObject
 	/** Format: date-time */
 	public string $To;
 	public ?array $BookKeepingTypesFilter = null;
-	public AccountingExportDateSelectionTypeView $DateSelectionType;
-	public AccountingExportFormatTypeView $Format;
+
+	/**
+	 * 0: EventDate
+	 * 1: TransactionDate
+	 * -1: Unknown
+	 */
+	public int $DateSelectionType;
+
+	/**
+	 * 0: SIE4
+	 * 1: CSV
+	 * -1: Unknown
+	 */
+	public int $Format;
 	public bool $SummarizeAccountsByDate;
 }

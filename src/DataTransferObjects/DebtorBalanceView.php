@@ -12,6 +12,16 @@ class DebtorBalanceView extends DataTransferObject
 	/** Format: date-time */
 	public string $TransactionDate;
 	public ?AmountView $Amount = null;
-	public DebtorBalanceTypeView $BalanceType;
+
+	/**
+	 * 0: OpeningBalance
+	 * 10: Invoice
+	 * 11: SelfInvoice
+	 * 20: OverPayment
+	 * 21: BalanceFromInvoice
+	 * 22: ManualBalance
+	 * -1: Unknown
+	 */
+	public int $BalanceType;
 	public ?string $Description = null;
 }

@@ -23,7 +23,13 @@ class VerificationInvoiceActionEntryView extends DataTransferObject
 	public ?array $Records = null;
 	public ?string $OurReference = null;
 	public ?string $YourReference = null;
-	public LanguageTypeView $CommunicationLanguage;
+
+	/**
+	 * 0: SV
+	 * 1: EN
+	 * 2: FI
+	 */
+	public int $CommunicationLanguage;
 	public ?string $Message = null;
 	public ?string $InvoiceNumber = null;
 	public ?InvoiceBookkeepingOverrideView $BookkeepingOverride = null;

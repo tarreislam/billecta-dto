@@ -19,5 +19,12 @@ class ProjectView extends DataTransferObject
 
 	/** Format: date-time */
 	public ?string $EndDate = null;
-	public ProjectStatusTypeView $Status;
+
+	/**
+	 * 0: NotStarted
+	 * 1: Ongoing
+	 * 2: Compelted
+	 * -1: Unknown
+	 */
+	public int $Status;
 }

@@ -18,7 +18,19 @@ class AccountingExportView extends DataTransferObject
 	/** Format: date-time */
 	public ?string $Created = null;
 	public ?string $CreatedBy = null;
-	public AccountingExportFormatTypeView $Format;
-	public AccountingExportDateSelectionTypeView $DateSelectionType;
+
+	/**
+	 * 0: SIE4
+	 * 1: CSV
+	 * -1: Unknown
+	 */
+	public int $Format;
+
+	/**
+	 * 0: EventDate
+	 * 1: TransactionDate
+	 * -1: Unknown
+	 */
+	public int $DateSelectionType;
 	public ?FileView $File = null;
 }

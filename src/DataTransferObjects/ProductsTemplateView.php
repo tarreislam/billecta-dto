@@ -40,5 +40,13 @@ class ProductsTemplateView extends DataTransferObject
 
 	/** Format: int32 */
 	public ?int $DefaultPurchaseVATAccount = null;
-	public ProductTypeView $DefaultProductType;
+
+	/**
+	 * 0: Service
+	 * 1: Commodity
+	 * 2: Package
+	 * 3: VAT
+	 * -1: Unknown
+	 */
+	public int $DefaultProductType;
 }

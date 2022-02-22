@@ -12,7 +12,13 @@ class UserView extends DataTransferObject
 	/** Format: guid */
 	public string $UserPublicId;
 	public ?string $FullName = null;
-	public LanguageTypeView $Language;
+
+	/**
+	 * 0: SV
+	 * 1: EN
+	 * 2: FI
+	 */
+	public int $Language;
 	public bool $PasswordExpired;
 	public bool $PasswordNeverExpires;
 	public ?string $Password = null;

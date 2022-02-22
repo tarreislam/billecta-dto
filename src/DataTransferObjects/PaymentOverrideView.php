@@ -15,6 +15,20 @@ class PaymentOverrideView extends DataTransferObject
 	public ?string $BankName = null;
 	public ?string $PaymentReceiver = null;
 	public ?string $Reference = null;
-	public ReferenceTypeView $ReferenceType;
-	public ReceivingAccountTypeView $ReceivingAccountType;
+
+	/**
+	 * 0: None
+	 * 1: OCR
+	 * 2: Message
+	 */
+	public int $ReferenceType;
+
+	/**
+	 * 0: BankGiro
+	 * 1: PlusGiro
+	 * 2: BankAccount
+	 * 3: IBAN
+	 * -1: Unknown
+	 */
+	public int $ReceivingAccountType;
 }

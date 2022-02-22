@@ -20,7 +20,14 @@ class DebtCollectionActionInvoiceView extends DataTransferObject
 	/** Format: int32 */
 	public int $InterestTermsInDays;
 	public float $InterestPercentage;
-	public InterestTypeView $InterestType;
+
+	/**
+	 * 0: Fixed
+	 * 1: AboveEffectiveReference
+	 * 2: NoInterest
+	 * -1: Unknown
+	 */
+	public int $InterestType;
 	public ?string $OurReference = null;
 	public ?string $YourReference = null;
 	public ?string $Name = null;

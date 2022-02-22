@@ -6,7 +6,16 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class BankIdAuthenticationStatusView extends DataTransferObject
 {
-	public BankIdStatusTypeView $Status;
+	/**
+	 * 0: OutstandingTransaction
+	 * 1: NoClient
+	 * 2: Started
+	 * 3: UserSign
+	 * 4: UserReq
+	 * 5: Complete
+	 * 6: Error
+	 */
+	public int $Status;
 	public ?string $SSN = null;
 	public ?string $ReferenceToken = null;
 	public ?string $AutoStartToken = null;
@@ -26,5 +35,18 @@ class BankIdAuthenticationStatusView extends DataTransferObject
 
 	/** Format: date-time */
 	public string $Created;
-	public ?BankIdHintCodeTypeView $HintCode = null;
+
+	/**
+	 * 0: unknown
+	 * 1: outstandingTransaction
+	 * 2: noClient
+	 * 3: started
+	 * 4: userSign
+	 * 5: expiredTransaction
+	 * 6: certificateErr
+	 * 7: userCancel
+	 * 8: cancelled
+	 * 9: startFailed
+	 */
+	public ?int $HintCode = null;
 }

@@ -9,7 +9,15 @@ class DebtorAutogiroView extends DataTransferObject
 	public bool $Active;
 	public ?string $AccountNo = null;
 	public ?string $ClearingNo = null;
-	public AutogiroStageTypeView $Stage;
+
+	/**
+	 * 0: Pending
+	 * 1: Approved
+	 * 2: Failed
+	 * 3: Removed
+	 * 100: Migration
+	 */
+	public int $Stage;
 	public ?string $PayerNumber = null;
 	public ?string $PaymentServiceSupplier = null;
 

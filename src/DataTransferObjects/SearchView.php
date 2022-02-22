@@ -11,7 +11,13 @@ class SearchView extends DataTransferObject
 	public ?array $ProductPublicIds = null;
 	public ?array $Status = null;
 	public ?array $Types = null;
-	public RotRutSearchFilterTypeView $RotRut;
+
+	/**
+	 * 0: NoFilter
+	 * 1: ROT
+	 * 2: RUT
+	 */
+	public int $RotRut;
 
 	/** Format: guid */
 	public string $CreditorPublicId;

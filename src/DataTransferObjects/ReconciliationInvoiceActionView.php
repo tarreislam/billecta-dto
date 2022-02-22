@@ -13,8 +13,24 @@ class ReconciliationInvoiceActionView extends DataTransferObject
 	public ?ReconciliationDebtorView $Debtor = null;
 	public ?ReconciliationInvoiceActionStateView $State = null;
 	public ?array $ReminderInvoices = null;
-	public DeliveryMethodTypeView $DeliveryMethod;
-	public LanguageTypeView $CommunicationLanguage;
+
+	/**
+	 * 0: Email
+	 * 1: Mail
+	 * 2: Manually
+	 * 3: SMS
+	 * 4: EInvoice
+	 * 5: Kivra
+	 * -1: Unknown
+	 */
+	public int $DeliveryMethod;
+
+	/**
+	 * 0: SV
+	 * 1: EN
+	 * 2: FI
+	 */
+	public int $CommunicationLanguage;
 	public ?string $InvoiceNumber = null;
 	public ?string $OCR = null;
 	public ?AmountView $InvoicedAmount = null;

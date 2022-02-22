@@ -7,7 +7,15 @@ use Spatie\DataTransferObject\DataTransferObject;
 class CreditorBankInfoView extends DataTransferObject
 {
 	public bool $UsesClientFund;
-	public CreditorPaymentMethodTypeView $PaymentMethod;
+
+	/**
+	 * 0: BankGiro
+	 * 1: PlusGiro
+	 * 2: BankAccount
+	 * 3: IBAN
+	 * -1: Unknown
+	 */
+	public int $PaymentMethod;
 	public ?string $BankgiroNo = null;
 	public bool $BankgiroNoVerified;
 	public ?string $PlusgiroNo = null;

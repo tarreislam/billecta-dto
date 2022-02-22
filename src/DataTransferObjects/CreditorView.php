@@ -33,5 +33,10 @@ class CreditorView extends DataTransferObject
 	public ?string $LogoURL = null;
 	public bool $UseCentRounding;
 	public bool $UsesClientFundForInvoicing;
-	public PaymentReconciliationTypeView $PaymentReconciliationType;
+
+	/**
+	 * 0: BankGiro
+	 * 1: CAMT
+	 */
+	public int $PaymentReconciliationType;
 }
