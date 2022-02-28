@@ -48,7 +48,7 @@ class BankIdSignStatusView extends DataTransferObject
 	 * 7: userCancel
 	 * 8: cancelled
 	 * 9: startFailed
-	 * @var string|int
+	 * @var string|int|null
 	 */
 	public $HintCode = null;
 }

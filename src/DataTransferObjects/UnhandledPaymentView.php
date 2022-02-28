@@ -19,6 +19,9 @@ class UnhandledPaymentView extends DataTransferObject
 	public ?string $SenderCountryCode = null;
 	public ?string $SenderOrgNo = null;
 	public ?string $SenderBankgiroNo = null;
+
+	/** Format: guid */
+	public ?string $DebtorPublicId = null;
 	public ?AmountView $Amount = null;
 
 	/** Format: date-time */
@@ -47,7 +50,4 @@ class UnhandledPaymentView extends DataTransferObject
 	 * @var string|int
 	 */
 	public $State;
-
-	/** Format: guid */
-	public ?string $DebtorPublicId = null;
 }

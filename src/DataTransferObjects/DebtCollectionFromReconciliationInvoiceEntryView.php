@@ -51,7 +51,7 @@ class DebtCollectionFromReconciliationInvoiceEntryView extends DataTransferObjec
 	 * 1: AboveEffectiveReference
 	 * 2: NoInterest
 	 * -1: Unknown
-	 * @var string|int
+	 * @var string|int|null
 	 */
 	public $InterestType = null;
 	public ?string $OurReference = null;

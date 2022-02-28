@@ -29,7 +29,7 @@ class SelfInvoiceActionEntryView extends DataTransferObject
 	 * 0: None
 	 * 1: OCR
 	 * 2: Message
-	 * @var string|int
+	 * @var string|int|null
 	 */
 	public $TransferReferenceType = null;
 	public ?string $YourReference = null;

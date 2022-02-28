@@ -24,7 +24,7 @@ class AccountingSettingsView extends DataTransferObject
 	 * 2: EUBAS97
 	 * 3: NE2007
 	 * -1: Unknown
-	 * @var string|int
+	 * @var string|int|null
 	 */
 	public $SieKPTYP = null;
 

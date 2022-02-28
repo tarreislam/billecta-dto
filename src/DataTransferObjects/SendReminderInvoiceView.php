@@ -16,7 +16,7 @@ class SendReminderInvoiceView extends DataTransferObject
 	 * 4: EInvoice
 	 * 5: Kivra
 	 * -1: Unknown
-	 * @var string|int
+	 * @var string|int|null
 	 */
 	public $DeliveryMethod = null;
 	public ?AmountView $ReminderFee = null;

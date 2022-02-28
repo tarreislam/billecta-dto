@@ -45,7 +45,7 @@ class DeliveryAddressOverrideView extends DataTransferObject
 	 * 24: AKSESSPUNKT
 	 * 25: FININVOICE
 	 * -1: Unknown
-	 * @var string|int
+	 * @var string|int|null
 	 */
 	public $Intermediator = null;
 }
