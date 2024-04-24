@@ -2,10 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class ListOfAccountingPaymentMeanView extends DataTransferObject
+class ListOfAccountingPaymentMeanView extends Data
 {
 	/** @var AccountingPaymentMeanView[] */
 	public array $items;
+
+
+	public function __construct()
+	{
+	}
 }

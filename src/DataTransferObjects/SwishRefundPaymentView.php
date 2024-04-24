@@ -2,10 +2,13 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class SwishRefundPaymentView extends DataTransferObject
+class SwishRefundPaymentView extends Data
 {
-	public ?string $PaymentPublicId = null;
-	public ?AmountView $Amount = null;
+	public function __construct(
+		public ?string $PaymentPublicId = null,
+		public ?AmountView $Amount = null,
+	) {
+	}
 }

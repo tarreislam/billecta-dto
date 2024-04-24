@@ -2,26 +2,27 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class ContractInvoiceActionStateView extends DataTransferObject
+class ContractInvoiceActionStateView extends Data
 {
-	/**
-	 * 0: None
-	 * 1: Created
-	 * 17: InvoiceCreated
-	 * -1: Unknown
-	 * @var string|int
-	 */
-	public $Stage;
-
-	/** Format: date-time */
-	public ?string $LastRunDate = null;
-
-	/** Format: date-time */
-	public ?string $NextRunDate = null;
-	public bool $IsPaused;
-	public bool $UseDebtorBalance;
-	public bool $CanPause;
-	public bool $CanResume;
+	public function __construct(
+		/**
+		 * 0: None
+		 * 1: Created
+		 * 17: InvoiceCreated
+		 * -1: Unknown
+		 * @var string|int
+		 */
+		public string|int $Stage,
+		public bool $IsPaused,
+		public bool $UseDebtorBalance,
+		public bool $CanPause,
+		public bool $CanResume,
+		/** Format: date-time */
+		public ?string $LastRunDate = null,
+		/** Format: date-time */
+		public ?string $NextRunDate = null,
+	) {
+	}
 }

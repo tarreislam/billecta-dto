@@ -2,10 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class ContractInvoiceActionSubsView extends DataTransferObject
+class ContractInvoiceActionSubsView extends Data
 {
 	/** @var ContractInvoiceActionSubView[] */
 	public array $ContractInvoiceActionSubView;
+
+
+	public function __construct()
+	{
+	}
 }

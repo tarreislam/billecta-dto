@@ -2,13 +2,16 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class SmsDeliveryView extends DataTransferObject
+class SmsDeliveryView extends Data
 {
-	/** Format: guid */
-	public string $CreditorPublicId;
-	public ?string $ReceiverPhone = null;
-	public ?string $Message = null;
-	public ?string $CountryCode = null;
+	public function __construct(
+		/** Format: guid */
+		public string $CreditorPublicId,
+		public ?string $ReceiverPhone = null,
+		public ?string $Message = null,
+		public ?string $CountryCode = null,
+	) {
+	}
 }

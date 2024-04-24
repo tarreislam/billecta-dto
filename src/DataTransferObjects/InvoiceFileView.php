@@ -2,13 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class InvoiceFileView extends DataTransferObject
+class InvoiceFileView extends Data
 {
-	public ?string $OCR = null;
-
-	/** Format: byte */
-	public ?string $Stream = null;
-	public ?string $Url = null;
+	public function __construct(
+		public ?string $OCR = null,
+		/** Format: byte */
+		public ?string $Stream = null,
+		public ?string $Url = null,
+	) {
+	}
 }

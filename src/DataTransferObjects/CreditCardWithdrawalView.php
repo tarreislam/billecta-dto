@@ -2,9 +2,12 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class CreditCardWithdrawalView extends DataTransferObject
+class CreditCardWithdrawalView extends Data
 {
-	public bool $CreditCardWithdrawalEnabled;
+	public function __construct(
+		public bool $CreditCardWithdrawalEnabled,
+	) {
+	}
 }

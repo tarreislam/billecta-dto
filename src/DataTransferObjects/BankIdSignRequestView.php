@@ -2,14 +2,17 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class BankIdSignRequestView extends DataTransferObject
+class BankIdSignRequestView extends Data
 {
-	/** Format: guid */
-	public string $CreditorPublicId;
-	public ?string $SSN = null;
-	public ?string $UserMessage = null;
-	public ?string $UserNonVisibleData = null;
-	public bool $TokenStartRequired;
+	public function __construct(
+		/** Format: guid */
+		public string $CreditorPublicId,
+		public bool $TokenStartRequired,
+		public ?string $SSN = null,
+		public ?string $UserMessage = null,
+		public ?string $UserNonVisibleData = null,
+	) {
+	}
 }

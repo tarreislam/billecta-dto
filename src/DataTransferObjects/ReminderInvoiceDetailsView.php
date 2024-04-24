@@ -2,12 +2,14 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class ReminderInvoiceDetailsView extends DataTransferObject
+class ReminderInvoiceDetailsView extends Data
 {
-	public bool $SendReminderInvoice;
-
-	/** Format: int32 */
-	public int $DaysDelayAfterDueDate;
+	public function __construct(
+		public bool $SendReminderInvoice,
+		/** Format: int32 */
+		public int $DaysDelayAfterDueDate,
+	) {
+	}
 }

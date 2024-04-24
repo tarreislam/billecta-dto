@@ -2,10 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class ListOfCountryView extends DataTransferObject
+class ListOfCountryView extends Data
 {
 	/** @var CountryView[] */
 	public array $items;
+
+
+	public function __construct()
+	{
+	}
 }

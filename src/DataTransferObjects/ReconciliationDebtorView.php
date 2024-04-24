@@ -2,14 +2,17 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class ReconciliationDebtorView extends DataTransferObject
+class ReconciliationDebtorView extends Data
 {
-	public ?string $DebtorNo = null;
-	public ?string $OrgNo = null;
-	public ?string $CountryCode = null;
-	public ?string $Name = null;
-	public ?string $Email = null;
-	public ?string $Phone = null;
+	public function __construct(
+		public ?string $DebtorNo = null,
+		public ?string $OrgNo = null,
+		public ?string $CountryCode = null,
+		public ?string $Name = null,
+		public ?string $Email = null,
+		public ?string $Phone = null,
+	) {
+	}
 }

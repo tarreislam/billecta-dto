@@ -2,12 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class DebtorAutogiroApprovalView extends DataTransferObject
+class DebtorAutogiroApprovalView extends Data
 {
-	/** Format: date-time */
-	public string $Created;
-	public bool $Active;
-	public ?string $AutoGiroApprovalXML = null;
+	public function __construct(
+		/** Format: date-time */
+		public string $Created,
+		public bool $Active,
+		public ?string $AutoGiroApprovalXML = null,
+	) {
+	}
 }

@@ -2,10 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class ListOfOutgoingPaymentStatusView extends DataTransferObject
+class ListOfOutgoingPaymentStatusView extends Data
 {
 	/** @var OutgoingPaymentStatusView[] */
 	public array $items;
+
+
+	public function __construct()
+	{
+	}
 }

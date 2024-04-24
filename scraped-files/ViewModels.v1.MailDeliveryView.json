@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "MailDeliveryView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "CreditorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "File": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/FileView"
+        }
+      ]
+    },
+    "Appendixes": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string",
+        "format": "byte"
+      }
+    },
+    "SendAsPriorityMail": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "SendWithColor": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "IsSimplex": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "PostageType": {
+      "description": "PostageType overrides SendAsPriorityMail if set",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/PostageTypeView"
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "FileView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "FilePublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "ContentType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Data": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "byte"
+        },
+        "FileName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "PostageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Unknown",
+        "Priority",
+        "Economy",
+        "Protected"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        4
+      ]
+    }
+  }
+}

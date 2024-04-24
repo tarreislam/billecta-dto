@@ -2,12 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class RotRutDetailsView extends DataTransferObject
+class RotRutDetailsView extends Data
 {
-	public ?string $ResidenceAssociationOrgNo = null;
-	public ?string $PropertyDesignation = null;
-	public ?array $Persons = null;
-	public ?array $Customers = null;
+	public function __construct(
+		public ?string $ResidenceAssociationOrgNo = null,
+		public ?string $PropertyDesignation = null,
+		public ?array $Persons = null,
+		public ?array $Customers = null,
+	) {
+	}
 }

@@ -1,0 +1,308 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "DefaultActionConfigView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "CreditorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "StartDebtCollectionActionLevel": {
+      "$ref": "#/definitions/DebtCollectionActionLevelTypeView"
+    },
+    "EndDebtCollectionActionLevel": {
+      "$ref": "#/definitions/DebtCollectionActionLevelTypeView"
+    },
+    "DeliveryMethod": {
+      "$ref": "#/definitions/DeliveryMethodTypeView"
+    },
+    "CommunicationLanguage": {
+      "$ref": "#/definitions/LanguageTypeView"
+    },
+    "PaymentTermsInDays": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "DebtCollectionPaymentTermsInDays": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "InterestTermsInDays": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "InterestPercentage": {
+      "type": "number",
+      "format": "double"
+    },
+    "InvoicePaymentTermsInDays": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "InterestType": {
+      "$ref": "#/definitions/InterestTypeView"
+    },
+    "InterestStartInDaysAfterDueDate": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "ReasonForHigherInterest": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "OurReference": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "NumberOfReminders": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "CurrencyCode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ReasonDescription": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "SendInvoiceToDebtCollectionAfterDays": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "SendInvoiceToDebtCollection": {
+      "type": "boolean"
+    },
+    "IncludePdfInEmail": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "SendReminderInvoice": {
+      "type": "boolean"
+    },
+    "SendReminderInvoiceDaysAfterDueDate": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "ReminderInvoiceFee": {
+      "type": "number",
+      "format": "double"
+    },
+    "InvoiceFee": {
+      "type": "number",
+      "format": "double"
+    },
+    "AutomaticInvoiceWriteOffThresholds": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/AmountView"
+      }
+    },
+    "InvoiceFeeOnlyOnDeliveryMethods": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/DeliveryMethodTypeView"
+      }
+    },
+    "SendByMailIfEmailNotViewedInDays": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "SendByMailIfEmailNotViewedInDaysEnabled": {
+      "type": "boolean"
+    },
+    "SendAsPriorityMail": {
+      "type": "boolean"
+    },
+    "SendWithColor": {
+      "type": "boolean"
+    },
+    "SendDebtCollectionsWithMail": {
+      "type": "boolean"
+    },
+    "ReminderInvoicePaymentTermsInDays": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "InvoiceComment": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ReminderGraceDays": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "MinAmountForSendingReminder": {
+      "type": [
+        "null",
+        "number"
+      ],
+      "format": "double"
+    },
+    "MinAmountForSendingDebtCollectionAction": {
+      "type": [
+        "null",
+        "number"
+      ],
+      "format": "double"
+    },
+    "IncomingPaymentNotificationMethods": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/IncomingPaymentNotificationMethodTypeView"
+      }
+    },
+    "DebtCollectionMessagePublicId": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "guid"
+    },
+    "DoNotAutomaticallySendForeignInvoicesToDebtCollection": {
+      "type": "boolean"
+    },
+    "ShowUnpaidInvoicesOnNextInvoice": {
+      "type": "boolean"
+    },
+    "UsageOfDebtorBalanceIsAppliedByDefault": {
+      "type": "boolean"
+    },
+    "DontRequestDueClaimResponse": {
+      "type": "boolean"
+    }
+  },
+  "definitions": {
+    "DebtCollectionActionLevelTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "LatePaymentFee",
+        "Reminders",
+        "DebtCollection",
+        "Bailiff",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        -1
+      ]
+    },
+    "DeliveryMethodTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Email",
+        "Mail",
+        "Manually",
+        "SMS",
+        "EInvoice",
+        "Kivra",
+        "Avy",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        -1
+      ]
+    },
+    "LanguageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "SV",
+        "EN",
+        "FI"
+      ],
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
+    "InterestTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Fixed",
+        "AboveEffectiveReference",
+        "NoInterest",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        -1
+      ]
+    },
+    "AmountView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ValueForView": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "IncomingPaymentNotificationMethodTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Email",
+        "SMS",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        -1
+      ]
+    }
+  }
+}

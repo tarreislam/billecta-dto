@@ -2,11 +2,14 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class CreditorTokenView extends DataTransferObject
+class CreditorTokenView extends Data
 {
-	/** Format: guid */
-	public string $Token;
-	public ?string $PortalURL = null;
+	public function __construct(
+		/** Format: guid */
+		public string $Token,
+		public ?string $PortalURL = null,
+	) {
+	}
 }

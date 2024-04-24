@@ -2,9 +2,12 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class PasswordView extends DataTransferObject
+class PasswordView extends Data
 {
-	public ?string $Password = null;
+	public function __construct(
+		public ?string $Password = null,
+	) {
+	}
 }

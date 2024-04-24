@@ -2,10 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class DebtCollectionActionSubsView extends DataTransferObject
+class DebtCollectionActionSubsView extends Data
 {
 	/** @var DebtCollectionActionSubView[] */
 	public array $DebtCollectionActionSubView;
+
+
+	public function __construct()
+	{
+	}
 }

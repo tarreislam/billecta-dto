@@ -2,12 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class DebtCollectionMessageView extends DataTransferObject
+class DebtCollectionMessageView extends Data
 {
-	/** Format: guid */
-	public string $PublicId;
-	public ?string $Message = null;
-	public bool $IsActive;
+	public function __construct(
+		/** Format: guid */
+		public string $PublicId,
+		public bool $IsActive,
+		public ?string $Message = null,
+	) {
+	}
 }

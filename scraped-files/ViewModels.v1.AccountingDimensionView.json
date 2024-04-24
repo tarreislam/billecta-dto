@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "AccountingDimensionView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "CreditorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "Name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Dimension": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "Code": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Description": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Comments": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Active": {
+      "type": "boolean"
+    }
+  }
+}

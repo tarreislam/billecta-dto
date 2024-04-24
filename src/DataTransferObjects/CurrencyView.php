@@ -2,16 +2,18 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class CurrencyView extends DataTransferObject
+class CurrencyView extends Data
 {
-	/** Format: int32 */
-	public int $Decimals;
-	public ?string $CurrencyCode = null;
-	public ?string $Iso4217 = null;
-	public ?string $Description = null;
-
-	/** Format: int64 */
-	public int $OneUnit;
+	public function __construct(
+		/** Format: int32 */
+		public int $Decimals,
+		/** Format: int64 */
+		public int $OneUnit,
+		public ?string $CurrencyCode = null,
+		public ?string $Iso4217 = null,
+		public ?string $Description = null,
+	) {
+	}
 }

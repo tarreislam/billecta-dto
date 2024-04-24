@@ -2,17 +2,19 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class CreditActionView extends DataTransferObject
+class CreditActionView extends Data
 {
-	public ?string $ActionPublicId = null;
-	public ?AmountView $Value = null;
-	public bool $InvoiceInterest;
-	public ?string $Comment = null;
-	public bool $IsPaymentCreditation;
-	public ?string $PaymentMeanCode = null;
-
-	/** Format: date-time */
-	public ?string $PaymentDate = null;
+	public function __construct(
+		public bool $InvoiceInterest,
+		public bool $IsPaymentCreditation,
+		public ?string $ActionPublicId = null,
+		public ?AmountView $Value = null,
+		public ?string $Comment = null,
+		public ?string $PaymentMeanCode = null,
+		/** Format: date-time */
+		public ?string $PaymentDate = null,
+	) {
+	}
 }

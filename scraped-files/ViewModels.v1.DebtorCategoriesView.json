@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ListOfDebtorCategoryView",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/DebtorCategoryView"
+  },
+  "definitions": {
+    "DebtorCategoryView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "CategoryPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "CategoryName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}

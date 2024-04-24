@@ -2,20 +2,22 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class CreditCardAddIntentView extends DataTransferObject
+class CreditCardAddIntentView extends Data
 {
-	/** Format: guid */
-	public string $DebtorPublicId;
-	public ?string $SuccessUrl = null;
-	public ?string $FailureUrl = null;
-
-	/**
-	 * 0: SV
-	 * 1: EN
-	 * 2: FI
-	 * @var string|int
-	 */
-	public $Language;
+	public function __construct(
+		/** Format: guid */
+		public string $DebtorPublicId,
+		/**
+		 * 0: SV
+		 * 1: EN
+		 * 2: FI
+		 * @var string|int
+		 */
+		public string|int $Language,
+		public ?string $SuccessUrl = null,
+		public ?string $FailureUrl = null,
+	) {
+	}
 }

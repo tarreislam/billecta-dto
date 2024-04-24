@@ -2,14 +2,17 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class CostCenterView extends DataTransferObject
+class CostCenterView extends Data
 {
-	/** Format: guid */
-	public string $CreditorPublicId;
-	public ?string $Code = null;
-	public ?string $Description = null;
-	public ?string $Comments = null;
-	public bool $Active;
+	public function __construct(
+		/** Format: guid */
+		public string $CreditorPublicId,
+		public bool $Active,
+		public ?string $Code = null,
+		public ?string $Description = null,
+		public ?string $Comments = null,
+	) {
+	}
 }

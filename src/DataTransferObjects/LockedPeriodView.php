@@ -2,13 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class LockedPeriodView extends DataTransferObject
+class LockedPeriodView extends Data
 {
-	/** Format: guid */
-	public string $CreditorPublicId;
-
-	/** Format: date-time */
-	public string $To;
+	public function __construct(
+		/** Format: guid */
+		public string $CreditorPublicId,
+		/** Format: date-time */
+		public string $To,
+	) {
+	}
 }

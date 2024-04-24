@@ -2,14 +2,16 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class InvoiceTextTemplateView extends DataTransferObject
+class InvoiceTextTemplateView extends Data
 {
-	/** Format: guid */
-	public string $InvoiceTextTemplatePublicId;
-
-	/** Format: guid */
-	public string $CreditorPublicId;
-	public ?string $Description = null;
+	public function __construct(
+		/** Format: guid */
+		public string $InvoiceTextTemplatePublicId,
+		/** Format: guid */
+		public string $CreditorPublicId,
+		public ?string $Description = null,
+	) {
+	}
 }

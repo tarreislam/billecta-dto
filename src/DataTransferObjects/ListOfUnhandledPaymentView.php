@@ -2,10 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class ListOfUnhandledPaymentView extends DataTransferObject
+class ListOfUnhandledPaymentView extends Data
 {
 	/** @var UnhandledPaymentView[] */
 	public array $items;
+
+
+	public function __construct()
+	{
+	}
 }

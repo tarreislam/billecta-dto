@@ -2,13 +2,16 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class AccountingPaymentMeanView extends DataTransferObject
+class AccountingPaymentMeanView extends Data
 {
-	/** Format: guid */
-	public string $CreditorPublicId;
-	public ?string $PaymentCode = null;
-	public ?string $Description = null;
-	public ?string $BookkeepingAccount = null;
+	public function __construct(
+		/** Format: guid */
+		public string $CreditorPublicId,
+		public ?string $PaymentCode = null,
+		public ?string $Description = null,
+		public ?string $BookkeepingAccount = null,
+	) {
+	}
 }

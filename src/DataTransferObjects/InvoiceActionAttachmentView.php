@@ -2,13 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class InvoiceActionAttachmentView extends DataTransferObject
+class InvoiceActionAttachmentView extends Data
 {
-	public ?FileView $File = null;
-	public bool $IsCoverSheet;
-
-	/** Format: int32 */
-	public int $SortNumber;
+	public function __construct(
+		public bool $IsCoverSheet,
+		/** Format: int32 */
+		public int $SortNumber,
+		public ?FileView $File = null,
+	) {
+	}
 }

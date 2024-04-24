@@ -1,0 +1,221 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "DebtCollectionFromReconciliationInvoiceEntryView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "SourcePublicId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "DeliveryMethod": {
+      "$ref": "#/definitions/DeliveryMethodTypeView"
+    },
+    "CommunicationLanguage": {
+      "$ref": "#/definitions/LanguageTypeView"
+    },
+    "ReasonDescription": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "NumberOfReminders": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "StartDebtCollectionActionLevel": {
+      "$ref": "#/definitions/DebtCollectionActionLevelTypeView"
+    },
+    "PaymentTermsInDays": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "InterestPercentage": {
+      "type": "number",
+      "format": "double"
+    },
+    "InterestType": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/InterestTypeView"
+        }
+      ]
+    },
+    "OurReference": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "YourReference": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "OriginalInvoiceDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "OriginalDueDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "InterestStartInDaysAfterDueDate": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "ReasonForHigherInterest": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Attention": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "CareOf": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Address": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Address2": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ZipCode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "City": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "CountryCode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Email": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Phone": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "OrgNo": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Eviction": {
+      "type": "boolean"
+    },
+    "InformSocialWelfare": {
+      "type": "boolean"
+    }
+  },
+  "definitions": {
+    "DeliveryMethodTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Email",
+        "Mail",
+        "Manually",
+        "SMS",
+        "EInvoice",
+        "Kivra",
+        "Avy",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        -1
+      ]
+    },
+    "LanguageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "SV",
+        "EN",
+        "FI"
+      ],
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
+    "DebtCollectionActionLevelTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "LatePaymentFee",
+        "Reminders",
+        "DebtCollection",
+        "Bailiff",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        -1
+      ]
+    },
+    "InterestTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Fixed",
+        "AboveEffectiveReference",
+        "NoInterest",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        -1
+      ]
+    }
+  }
+}

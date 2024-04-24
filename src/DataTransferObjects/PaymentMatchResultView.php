@@ -2,12 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class PaymentMatchResultView extends DataTransferObject
+class PaymentMatchResultView extends Data
 {
-	/** Format: guid */
-	public string $UnhandledPaymentPublicId;
-	public bool $Successfull;
-	public ?string $ResponseMessage = null;
+	public function __construct(
+		/** Format: guid */
+		public string $UnhandledPaymentPublicId,
+		public bool $Successfull,
+		public ?string $ResponseMessage = null,
+	) {
+	}
 }

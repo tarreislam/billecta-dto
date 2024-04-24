@@ -2,10 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class ProductsView extends DataTransferObject
+class ProductsView extends Data
 {
 	/** @var ProductView[] */
 	public array $ProductView;
+
+
+	public function __construct()
+	{
+	}
 }

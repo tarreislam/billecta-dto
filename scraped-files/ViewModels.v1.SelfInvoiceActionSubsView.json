@@ -1,0 +1,422 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SelfInvoiceActionSubsView",
+  "definitions": {
+    "SelfInvoiceActionSubView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "DebtorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "CreditorOrgNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Avsändare"
+        },
+        "CurrentAmount": {
+          "description": "Återstående belopp",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "InvoicedAmount": {
+          "description": "Fakturerat belopp",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "Stage": {
+          "description": "Status",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/SelfInvoiceActionStageTypeView"
+            }
+          ]
+        },
+        "Created": {
+          "type": "string",
+          "description": "Skapades",
+          "format": "date-time"
+        },
+        "ClosedDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Stängdes",
+          "format": "date-time"
+        },
+        "DebtorOrgNo": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Org.nr."
+        },
+        "DebtorName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Kund"
+        },
+        "DebtorAccount": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Bankgiro/Plusgiro/Konto/Iban"
+        },
+        "ActionType": {
+          "description": "Typ",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/ActionTypeView"
+            }
+          ]
+        },
+        "AttestedDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Attesterades",
+          "format": "date-time"
+        },
+        "InvoiceSentDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Skickades",
+          "format": "date-time"
+        },
+        "NextEvent": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "NextEventDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "DueDate": {
+          "type": "string",
+          "description": "Förfallodatum",
+          "format": "date-time"
+        },
+        "InvoiceDate": {
+          "type": "string",
+          "description": "Fakturadatum",
+          "format": "date-time"
+        },
+        "InvoiceNumber": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Fakturanummer"
+        },
+        "BankgiroNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "IsCommented": {
+          "type": "boolean"
+        },
+        "IsPaused": {
+          "type": "boolean"
+        },
+        "OCR": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Referens"
+        },
+        "DeliveryMethod": {
+          "description": "Leveranssätt",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/DeliveryMethodTypeView"
+            }
+          ]
+        },
+        "DeliveryStatus": {
+          "$ref": "#/definitions/DeliveryStatusTypeView"
+        },
+        "NextPaymentDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "NextPaymentAmount": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "TotalVATAmount": {
+          "description": "Fakturerad moms",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "File": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/FileView"
+            }
+          ]
+        },
+        "YourReference": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Er referens"
+        }
+      }
+    },
+    "AmountView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ValueForView": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "SelfInvoiceActionStageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "None",
+        "Created",
+        "Manual",
+        "Completed",
+        "Cancelled",
+        "InvoiceSent",
+        "Attested",
+        "PaymentSent",
+        "PaymentCancelled",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        5,
+        6,
+        7,
+        12,
+        13,
+        18,
+        19,
+        -1
+      ]
+    },
+    "ActionTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "DebtCollectionAction",
+        "InstallmentPlanAction",
+        "InvoiceAction",
+        "CreditInvoiceAction",
+        "ContractInvoiceAction",
+        "SelfInvoiceAction",
+        "VerificationInvoiceAction",
+        "DebentureAction",
+        "InterestInvoiceAction",
+        "SupplierInvoiceAction",
+        "ReconciliationInvoiceAction",
+        "OrderAction",
+        "OrderInvoiceAction",
+        "PaymentAdviceAction",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        -1
+      ]
+    },
+    "DeliveryMethodTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Email",
+        "Mail",
+        "Manually",
+        "SMS",
+        "EInvoice",
+        "Kivra",
+        "Avy",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        -1
+      ]
+    },
+    "DeliveryStatusTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Unknown",
+        "Received",
+        "Opened",
+        "Viewed"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "FileView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "FilePublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "ContentType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Data": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "byte"
+        },
+        "FileName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/SelfInvoiceActionSubView"
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "SortingField": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Ascending": {
+          "type": "boolean"
+        },
+        "Total": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1836 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SearchResultView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "InvoiceActions": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/InvoiceActionSubView"
+      }
+    },
+    "ReconciliationInvoiceActions": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/ReconciliationInvoiceActionSubView"
+      }
+    },
+    "SelfInvoiceActions": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/SelfInvoiceActionSubView"
+      }
+    },
+    "DebtCollectionActions": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/DebtCollectionActionSubView"
+      }
+    },
+    "InstallmentPlanActions": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/InstallmentPlanActionSubView"
+      }
+    },
+    "ContractInvoiceActions": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/ContractInvoiceActionSubView"
+      }
+    },
+    "SupplierInvoiceActions": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/SupplierInvoiceActionSubView"
+      }
+    }
+  },
+  "definitions": {
+    "InvoiceActionSubView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "DebtorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "CreditorOrgNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Avsändare"
+        },
+        "DebtorOrgNo": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Org.nr."
+        },
+        "DebtorName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Kund"
+        },
+        "CurrentAmount": {
+          "description": "Återstående belopp",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "InvoicedAmount": {
+          "description": "Fakturerat belopp",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "Stage": {
+          "description": "Status",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/InvoiceActionStageTypeView"
+            }
+          ]
+        },
+        "ActionType": {
+          "description": "Typ",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/ActionTypeView"
+            }
+          ]
+        },
+        "DeliveryMethod": {
+          "description": "Leveranssätt",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/DeliveryMethodTypeView"
+            }
+          ]
+        },
+        "DeliveryStatus": {
+          "$ref": "#/definitions/DeliveryStatusTypeView"
+        },
+        "ClosedDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Stängdes",
+          "format": "date-time"
+        },
+        "Created": {
+          "type": "string",
+          "description": "Skapades",
+          "format": "date-time"
+        },
+        "InvoiceSentDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Skickades",
+          "format": "date-time"
+        },
+        "ReminderInvoiceSentDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Påminnelse skickades",
+          "format": "date-time"
+        },
+        "AttestedDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Attesterades",
+          "format": "date-time"
+        },
+        "NextEventDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "DueDate": {
+          "type": "string",
+          "description": "Förfallodatum",
+          "format": "date-time"
+        },
+        "InvoiceDate": {
+          "type": "string",
+          "description": "Fakturadatum",
+          "format": "date-time"
+        },
+        "InvoiceNumber": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Fakturanummer"
+        },
+        "IsCommented": {
+          "type": "boolean"
+        },
+        "IsLocked": {
+          "type": "boolean"
+        },
+        "IsPaused": {
+          "type": "boolean"
+        },
+        "OCR": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Referens"
+        },
+        "ContractInvoiceActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "File": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/FileView"
+            }
+          ]
+        },
+        "NextEvent": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "AwaitingPaymentTransferAmount": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "TotalVATAmount": {
+          "description": "Fakturerad moms",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "IsDisputed": {
+          "type": "boolean"
+        },
+        "DebtCollectionActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "ReminderInvoiceActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "AutogiroWithdrawalEnabled": {
+          "type": "boolean"
+        },
+        "YourReference": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Er referens"
+        }
+      }
+    },
+    "AmountView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ValueForView": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "InvoiceActionStageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "None",
+        "Created",
+        "ReminderInvoiceSent",
+        "Manual",
+        "Completed",
+        "Cancelled",
+        "InvoiceSent",
+        "Attested",
+        "SentToDebtCollection",
+        "SalesRequested",
+        "SaleRequestAccepted",
+        "SalesRequestedCancelled",
+        "SalesRequestedDenied",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        5,
+        6,
+        7,
+        12,
+        13,
+        16,
+        20,
+        21,
+        22,
+        23,
+        -1
+      ]
+    },
+    "ActionTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "DebtCollectionAction",
+        "InstallmentPlanAction",
+        "InvoiceAction",
+        "CreditInvoiceAction",
+        "ContractInvoiceAction",
+        "SelfInvoiceAction",
+        "VerificationInvoiceAction",
+        "DebentureAction",
+        "InterestInvoiceAction",
+        "SupplierInvoiceAction",
+        "ReconciliationInvoiceAction",
+        "OrderAction",
+        "OrderInvoiceAction",
+        "PaymentAdviceAction",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        -1
+      ]
+    },
+    "DeliveryMethodTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Email",
+        "Mail",
+        "Manually",
+        "SMS",
+        "EInvoice",
+        "Kivra",
+        "Avy",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        -1
+      ]
+    },
+    "DeliveryStatusTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Unknown",
+        "Received",
+        "Opened",
+        "Viewed"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "FileView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "FilePublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "ContentType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Data": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "byte"
+        },
+        "FileName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "ReconciliationInvoiceActionSubView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "CreditorOrgNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Avsändare"
+        },
+        "DebtorOrgNo": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Org.nr."
+        },
+        "DebtorName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Kund"
+        },
+        "DebtorPhone": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "DebtorDebtorNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "DebtorEmail": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CurrentAmount": {
+          "description": "Återstående belopp",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "InvoicedAmount": {
+          "description": "Fakturerat belopp",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "Stage": {
+          "description": "Status",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/ReconciliationInvoiceActionStageTypeView"
+            }
+          ]
+        },
+        "DeliveryMethod": {
+          "$ref": "#/definitions/DeliveryMethodTypeView"
+        },
+        "ActionType": {
+          "description": "Typ",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/ActionTypeView"
+            }
+          ]
+        },
+        "ClosedDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Stängdes",
+          "format": "date-time"
+        },
+        "Created": {
+          "type": "string",
+          "description": "Skapades",
+          "format": "date-time"
+        },
+        "InvoiceSentDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Skickades",
+          "format": "date-time"
+        },
+        "ReminderInvoiceSentDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "InvoiceNumber": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Fakturanummer"
+        },
+        "OCR": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Referens"
+        },
+        "InvoiceFile": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/FileView"
+            }
+          ]
+        },
+        "DebtCollectionActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "ReconciliationInvoiceActionStageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "None",
+        "Created",
+        "Completed",
+        "InvoiceSent",
+        "SentToDebtCollection",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        6,
+        12,
+        16,
+        -1
+      ]
+    },
+    "SelfInvoiceActionSubView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "DebtorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "CreditorOrgNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Avsändare"
+        },
+        "CurrentAmount": {
+          "description": "Återstående belopp",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "InvoicedAmount": {
+          "description": "Fakturerat belopp",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "Stage": {
+          "description": "Status",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/SelfInvoiceActionStageTypeView"
+            }
+          ]
+        },
+        "Created": {
+          "type": "string",
+          "description": "Skapades",
+          "format": "date-time"
+        },
+        "ClosedDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Stängdes",
+          "format": "date-time"
+        },
+        "DebtorOrgNo": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Org.nr."
+        },
+        "DebtorName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Kund"
+        },
+        "DebtorAccount": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Bankgiro/Plusgiro/Konto/Iban"
+        },
+        "ActionType": {
+          "description": "Typ",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/ActionTypeView"
+            }
+          ]
+        },
+        "AttestedDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Attesterades",
+          "format": "date-time"
+        },
+        "InvoiceSentDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Skickades",
+          "format": "date-time"
+        },
+        "NextEvent": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "NextEventDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "DueDate": {
+          "type": "string",
+          "description": "Förfallodatum",
+          "format": "date-time"
+        },
+        "InvoiceDate": {
+          "type": "string",
+          "description": "Fakturadatum",
+          "format": "date-time"
+        },
+        "InvoiceNumber": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Fakturanummer"
+        },
+        "BankgiroNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "IsCommented": {
+          "type": "boolean"
+        },
+        "IsPaused": {
+          "type": "boolean"
+        },
+        "OCR": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Referens"
+        },
+        "DeliveryMethod": {
+          "description": "Leveranssätt",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/DeliveryMethodTypeView"
+            }
+          ]
+        },
+        "DeliveryStatus": {
+          "$ref": "#/definitions/DeliveryStatusTypeView"
+        },
+        "NextPaymentDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "NextPaymentAmount": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "TotalVATAmount": {
+          "description": "Fakturerad moms",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "File": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/FileView"
+            }
+          ]
+        },
+        "YourReference": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Er referens"
+        }
+      }
+    },
+    "SelfInvoiceActionStageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "None",
+        "Created",
+        "Manual",
+        "Completed",
+        "Cancelled",
+        "InvoiceSent",
+        "Attested",
+        "PaymentSent",
+        "PaymentCancelled",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        5,
+        6,
+        7,
+        12,
+        13,
+        18,
+        19,
+        -1
+      ]
+    },
+    "DebtCollectionActionSubView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "DebtorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "CreditorOrgNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Avsändare"
+        },
+        "DebtorOrgNo": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Org.nr."
+        },
+        "DebtorName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Kund"
+        },
+        "CurrentAmount": {
+          "description": "Återstående belopp",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "InvoicedAmount": {
+          "description": "Fakturerat belopp",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "Stage": {
+          "description": "Status",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/DebtCollectionActionStageTypeView"
+            }
+          ]
+        },
+        "ActionType": {
+          "description": "Typ",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/ActionTypeView"
+            }
+          ]
+        },
+        "DeliveryMethod": {
+          "description": "Leveranssätt",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/DeliveryMethodTypeView"
+            }
+          ]
+        },
+        "Created": {
+          "type": "string",
+          "description": "Skapades",
+          "format": "date-time"
+        },
+        "ClosedDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Stängdes",
+          "format": "date-time"
+        },
+        "AttestedDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Attesterades",
+          "format": "date-time"
+        },
+        "NextEventDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "NextEvent": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "OriginalDueDate": {
+          "type": "string",
+          "description": "Förfallodatum",
+          "format": "date-time"
+        },
+        "OriginalInvoiceDate": {
+          "type": "string",
+          "description": "Fakturadatum",
+          "format": "date-time"
+        },
+        "OriginalInvoiceNumber": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Fakturanummer"
+        },
+        "IsPaused": {
+          "type": "boolean"
+        },
+        "IsCommented": {
+          "type": "boolean"
+        },
+        "IsDisputed": {
+          "type": "boolean"
+        },
+        "DeliveryStatus": {
+          "$ref": "#/definitions/DeliveryStatusTypeView"
+        },
+        "Files": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/FileView"
+          }
+        },
+        "OCRs": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "InvoiceNumbers": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "InvoiceSourcePublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "DebtCollectionActionSource": {
+          "$ref": "#/definitions/ActionSourceTypeView"
+        },
+        "InstallmentPlanPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CommunicationLanguage": {
+          "$ref": "#/definitions/LanguageTypeView"
+        },
+        "PaymentTermsInDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "InterestPercentage": {
+          "type": "number",
+          "format": "double"
+        },
+        "YourReference": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Er referens"
+        }
+      }
+    },
+    "DebtCollectionActionStageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "None",
+        "Created",
+        "ReminderInvoiceSent",
+        "DebtCollectionInvoiceSent",
+        "SentToBailiff",
+        "Manual",
+        "Completed",
+        "Cancelled",
+        "ForeignManual",
+        "AwaitingFeePayment",
+        "Attested",
+        "DebtCollectionClaimDue",
+        "LatePaymentInvoiceSent",
+        "DebtCollectionClaimResponseRequested",
+        "ReadyForBailiff",
+        "LongTermSurveilance",
+        "VerdictObtained",
+        "SentToBailiffEnforcement",
+        "ForeignDebtorLetterSent",
+        "ForeignCreditorLetterSent",
+        "EnforcementResponseRequested",
+        "ReadyForEnforcement",
+        "ForeignSentToLocalRepresentative",
+        "ForeignMakeReadyForLocalRepresentative",
+        "ReadyForAttest",
+        "ReadyForAssistance",
+        "ReadyForAssistanceWithBailiff",
+        "Assisted",
+        "AssistedWithBailiff",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        13,
+        14,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        -1
+      ]
+    },
+    "ActionSourceTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "None",
+        "DebtCollectionAction",
+        "InvoiceAction",
+        "ReconciliationInvoiceAction",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        -1
+      ]
+    },
+    "LanguageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "SV",
+        "EN",
+        "FI"
+      ],
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
+    "InstallmentPlanActionSubView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "DebtorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "CreditorOrgNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Avsändare"
+        },
+        "DebtorOrgNo": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Org.nr."
+        },
+        "DebtorName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Kund"
+        },
+        "CurrentAmount": {
+          "description": "Återstående belopp",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "InvoicedAmount": {
+          "description": "Fakturerat belopp",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "Stage": {
+          "description": "Status",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/InstallmentPlanActionStageTypeView"
+            }
+          ]
+        },
+        "ActionType": {
+          "description": "Typ",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/ActionTypeView"
+            }
+          ]
+        },
+        "DeliveryMethod": {
+          "$ref": "#/definitions/DeliveryMethodTypeView"
+        },
+        "Created": {
+          "type": "string",
+          "description": "Skapades",
+          "format": "date-time"
+        },
+        "ClosedDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Stängdes",
+          "format": "date-time"
+        },
+        "AttestedDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Attesterades",
+          "format": "date-time"
+        },
+        "NextEventDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "NextEvent": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "OriginalDueDate": {
+          "type": "string",
+          "description": "Förfallodatum",
+          "format": "date-time"
+        },
+        "OriginalInvoiceDate": {
+          "type": "string",
+          "description": "Fakturadatum",
+          "format": "date-time"
+        },
+        "OriginalInvoiceNumber": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Fakturanummer"
+        },
+        "IsPaused": {
+          "type": "boolean"
+        },
+        "IsCommented": {
+          "type": "boolean"
+        },
+        "IsDisputed": {
+          "type": "boolean"
+        },
+        "DeliveryStatus": {
+          "$ref": "#/definitions/DeliveryStatusTypeView"
+        },
+        "Files": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/FileView"
+          }
+        },
+        "OCRs": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "InvoiceNumbers": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "CommunicationLanguage": {
+          "$ref": "#/definitions/LanguageTypeView"
+        },
+        "PaymentTermsInDays": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "InterestPercentage": {
+          "type": "number",
+          "format": "double"
+        },
+        "YourReference": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Er referens"
+        }
+      }
+    },
+    "InstallmentPlanActionStageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "None",
+        "Created",
+        "Manual",
+        "Completed",
+        "Cancelled",
+        "AwaitingFeePayment",
+        "InstallmentPlanInvoiceSent",
+        "Attested",
+        "ReturnToSourceRequested",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        5,
+        6,
+        7,
+        9,
+        11,
+        13,
+        15,
+        -1
+      ]
+    },
+    "ContractInvoiceActionSubView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "DebtorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "CostCenter": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorOrgNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Avsändare"
+        },
+        "Amount": {
+          "description": "Återstående belopp",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "Created": {
+          "type": "string",
+          "description": "Skapades",
+          "format": "date-time"
+        },
+        "DebtorOrgNo": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Org.nr."
+        },
+        "DebtorName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Kund"
+        },
+        "LastRunDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Senaste körning",
+          "format": "date-time"
+        },
+        "NextRunDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Nästa körning",
+          "format": "date-time"
+        },
+        "IsPaused": {
+          "type": "boolean"
+        },
+        "DeliveryMethod": {
+          "description": "Leveranssätt",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/DeliveryMethodTypeView"
+            }
+          ]
+        },
+        "RecurrenceInterval": {
+          "$ref": "#/definitions/RecurrenceIntervalTypeView"
+        },
+        "ContractNumber": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Avtalsnummer"
+        },
+        "Start": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Startdatum",
+          "format": "date-time"
+        },
+        "End": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Slutdatum",
+          "format": "date-time"
+        },
+        "OurReference": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Vår referens"
+        },
+        "AutogiroWithdrawalEnabled": {
+          "type": "boolean",
+          "description": "Dras med autogiro"
+        },
+        "YourReference": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Er referens"
+        }
+      }
+    },
+    "RecurrenceIntervalTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Monthly",
+        "Yearly",
+        "Quarterly",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        -1
+      ]
+    },
+    "SupplierInvoiceActionSubView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ActionPublicId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "SupplierPublicId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "CreditorOrgNo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreditorName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Avsändare"
+        },
+        "CurrentAmount": {
+          "description": "Återstående belopp",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "InvoicedAmount": {
+          "description": "Fakturerat belopp",
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "Stage": {
+          "description": "Status",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/SupplierInvoiceActionStageTypeView"
+            }
+          ]
+        },
+        "ActionType": {
+          "description": "Typ",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/ActionTypeView"
+            }
+          ]
+        },
+        "Created": {
+          "type": "string",
+          "description": "Skapades",
+          "format": "date-time"
+        },
+        "ClosedDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Stängdes",
+          "format": "date-time"
+        },
+        "SupplierOrgNo": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Org.nr."
+        },
+        "SupplierName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Kund"
+        },
+        "AttestedDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Attesterades",
+          "format": "date-time"
+        },
+        "NextEvent": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "NextEventDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "NextPaymentDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "NextPaymentAmount": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/AmountView"
+            }
+          ]
+        },
+        "DueDate": {
+          "type": "string",
+          "description": "Förfallodatum",
+          "format": "date-time"
+        },
+        "InvoiceDate": {
+          "type": "string",
+          "description": "Fakturadatum",
+          "format": "date-time"
+        },
+        "InvoiceNumber": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Fakturanummer"
+        },
+        "IsPaused": {
+          "type": "boolean"
+        },
+        "OCR": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Referens"
+        },
+        "InvoiceFile": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/FileView"
+            }
+          ]
+        },
+        "Origin": {
+          "$ref": "#/definitions/OriginTypeView"
+        },
+        "ExternalSourceId": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Externt källreferensid"
+        }
+      }
+    },
+    "SupplierInvoiceActionStageTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "None",
+        "Created",
+        "Manual",
+        "Completed",
+        "Cancelled",
+        "Attested",
+        "PaymentSent",
+        "PaymentCancelled",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        5,
+        6,
+        7,
+        13,
+        18,
+        19,
+        -1
+      ]
+    },
+    "OriginTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "InternalApi",
+        "FortnoxOrder",
+        "InternalSystem",
+        "Fortnox",
+        "PeAccountingInvoice",
+        "Kommed"
+      ],
+      "enum": [
+        0,
+        3,
+        4,
+        6,
+        7,
+        10
+      ]
+    }
+  }
+}

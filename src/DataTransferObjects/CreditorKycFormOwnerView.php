@@ -2,17 +2,20 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class CreditorKycFormOwnerView extends DataTransferObject
+class CreditorKycFormOwnerView extends Data
 {
-	public ?string $Name = null;
-	public ?string $SSN = null;
-	public float $HoldingSharesInPercent;
-	public float $HoldingVotesInPercent;
-	public ?string $Address = null;
-	public ?string $CountryName = null;
-	public bool $IsNonLegalEntity;
-	public bool $HasUsCitizenship;
-	public bool $NonLegalEntityIsDirectOWner;
+	public function __construct(
+		public float $HoldingSharesInPercent,
+		public float $HoldingVotesInPercent,
+		public bool $IsNonLegalEntity,
+		public bool $HasUsCitizenship,
+		public bool $NonLegalEntityIsDirectOWner,
+		public ?string $Name = null,
+		public ?string $SSN = null,
+		public ?string $Address = null,
+		public ?string $CountryName = null,
+	) {
+	}
 }

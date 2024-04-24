@@ -2,16 +2,17 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class QuarterlyRecurrenceView extends DataTransferObject
+class QuarterlyRecurrenceView extends Data
 {
-	/** Format: int32 */
-	public int $RecurOnDayInMonth;
-
-	/** Format: int32 */
-	public int $RecurOnMonth;
-
-	/** Format: int32 */
-	public int $RecurQuarterInterval;
+	public function __construct(
+		/** Format: int32 */
+		public int $RecurOnDayInMonth,
+		/** Format: int32 */
+		public int $RecurOnMonth,
+		/** Format: int32 */
+		public int $RecurQuarterInterval,
+	) {
+	}
 }

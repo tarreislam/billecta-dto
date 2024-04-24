@@ -2,10 +2,13 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class StreamView extends DataTransferObject
+class StreamView extends Data
 {
-	/** Format: byte */
-	public ?string $Data = null;
+	public function __construct(
+		/** Format: byte */
+		public ?string $Data = null,
+	) {
+	}
 }

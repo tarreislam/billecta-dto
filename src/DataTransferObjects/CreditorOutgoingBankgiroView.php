@@ -2,13 +2,16 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class CreditorOutgoingBankgiroView extends DataTransferObject
+class CreditorOutgoingBankgiroView extends Data
 {
-	public ?string $BankgiroNo = null;
-	public bool $IsActive;
-	public bool $BankgiroApproved;
-	public ?string $Description = null;
-	public ?string $BookkeepingPaymentMeanCode = null;
+	public function __construct(
+		public bool $IsActive,
+		public bool $BankgiroApproved,
+		public ?string $BankgiroNo = null,
+		public ?string $Description = null,
+		public ?string $BookkeepingPaymentMeanCode = null,
+	) {
+	}
 }

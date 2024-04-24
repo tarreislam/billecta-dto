@@ -2,12 +2,14 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class SecureTokenView extends DataTransferObject
+class SecureTokenView extends Data
 {
-	public ?string $Value = null;
-
-	/** Format: date-time */
-	public string $Expires;
+	public function __construct(
+		/** Format: date-time */
+		public string $Expires,
+		public ?string $Value = null,
+	) {
+	}
 }

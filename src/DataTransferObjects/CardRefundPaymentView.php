@@ -2,11 +2,14 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class CardRefundPaymentView extends DataTransferObject
+class CardRefundPaymentView extends Data
 {
-	/** Format: guid */
-	public string $PaymentPublicId;
-	public ?AmountView $Amount = null;
+	public function __construct(
+		/** Format: guid */
+		public string $PaymentPublicId,
+		public ?AmountView $Amount = null,
+	) {
+	}
 }

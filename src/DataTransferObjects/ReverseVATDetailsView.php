@@ -2,10 +2,13 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class ReverseVATDetailsView extends DataTransferObject
+class ReverseVATDetailsView extends Data
 {
-	public bool $ReverseVATActivated;
-	public ?string $ReceiverVATNumber = null;
+	public function __construct(
+		public bool $ReverseVATActivated,
+		public ?string $ReceiverVATNumber = null,
+	) {
+	}
 }

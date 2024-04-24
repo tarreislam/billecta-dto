@@ -2,15 +2,17 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class FileView extends DataTransferObject
+class FileView extends Data
 {
-	/** Format: guid */
-	public string $FilePublicId;
-	public ?string $ContentType = null;
-
-	/** Format: byte */
-	public ?string $Data = null;
-	public ?string $FileName = null;
+	public function __construct(
+		/** Format: guid */
+		public string $FilePublicId,
+		public ?string $ContentType = null,
+		/** Format: byte */
+		public ?string $Data = null,
+		public ?string $FileName = null,
+	) {
+	}
 }

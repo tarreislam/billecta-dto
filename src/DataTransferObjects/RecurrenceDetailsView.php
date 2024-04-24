@@ -2,26 +2,27 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class RecurrenceDetailsView extends DataTransferObject
+class RecurrenceDetailsView extends Data
 {
-	/**
-	 * 0: Monthly
-	 * 1: Yearly
-	 * 2: Quarterly
-	 * -1: Unknown
-	 * @var string|int
-	 */
-	public $RecurrenceInterval;
-	public ?MonthlyRecurrenceView $MonthlyRecurrence = null;
-	public ?YearlyRecurrenceView $YearlyRecurrence = null;
-	public ?QuarterlyRecurrenceView $QuarterlyRecurrence = null;
-
-	/** Format: date-time */
-	public string $Start;
-	public bool $NoEndDate;
-
-	/** Format: date-time */
-	public ?string $End = null;
+	public function __construct(
+		/**
+		 * 0: Monthly
+		 * 1: Yearly
+		 * 2: Quarterly
+		 * -1: Unknown
+		 * @var string|int
+		 */
+		public string|int $RecurrenceInterval,
+		/** Format: date-time */
+		public string $Start,
+		public bool $NoEndDate,
+		public ?MonthlyRecurrenceView $MonthlyRecurrence = null,
+		public ?YearlyRecurrenceView $YearlyRecurrence = null,
+		public ?QuarterlyRecurrenceView $QuarterlyRecurrence = null,
+		/** Format: date-time */
+		public ?string $End = null,
+	) {
+	}
 }

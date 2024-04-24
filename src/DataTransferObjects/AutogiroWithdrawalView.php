@@ -2,9 +2,12 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class AutogiroWithdrawalView extends DataTransferObject
+class AutogiroWithdrawalView extends Data
 {
-	public bool $AutogiroWithdrawalEnabled;
+	public function __construct(
+		public bool $AutogiroWithdrawalEnabled,
+	) {
+	}
 }

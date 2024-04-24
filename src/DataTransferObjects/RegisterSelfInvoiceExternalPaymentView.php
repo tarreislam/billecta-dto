@@ -2,15 +2,17 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class RegisterSelfInvoiceExternalPaymentView extends DataTransferObject
+class RegisterSelfInvoiceExternalPaymentView extends Data
 {
-	public ?string $ActionPublicId = null;
-	public ?AmountView $Amount = null;
-	public ?string $Comment = null;
-
-	/** Format: date-time */
-	public string $Date;
-	public ?string $PaymentMeanCode = null;
+	public function __construct(
+		/** Format: date-time */
+		public string $Date,
+		public ?string $ActionPublicId = null,
+		public ?AmountView $Amount = null,
+		public ?string $Comment = null,
+		public ?string $PaymentMeanCode = null,
+	) {
+	}
 }

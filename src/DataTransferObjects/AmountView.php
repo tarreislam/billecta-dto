@@ -2,13 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class AmountView extends DataTransferObject
+class AmountView extends Data
 {
-	public ?string $CurrencyCode = null;
-
-	/** Format: int64 */
-	public int $Value;
-	public float $ValueForView;
+	public function __construct(
+		/** Format: int64 */
+		public int $Value,
+		public float $ValueForView,
+		public ?string $CurrencyCode = null,
+	) {
+	}
 }

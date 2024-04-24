@@ -2,10 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class ListOfInvoiceActionRotRutProcessedView extends DataTransferObject
+class ListOfInvoiceActionRotRutProcessedView extends Data
 {
 	/** @var InvoiceActionRotRutProcessedView[] */
 	public array $items;
+
+
+	public function __construct()
+	{
+	}
 }

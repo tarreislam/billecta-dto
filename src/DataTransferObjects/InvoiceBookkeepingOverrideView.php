@@ -2,9 +2,12 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class InvoiceBookkeepingOverrideView extends DataTransferObject
+class InvoiceBookkeepingOverrideView extends Data
 {
-	public ?string $DebitAccount = null;
+	public function __construct(
+		public ?string $DebitAccount = null,
+	) {
+	}
 }

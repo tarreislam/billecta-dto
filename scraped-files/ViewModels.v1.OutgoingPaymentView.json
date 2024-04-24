@@ -1,0 +1,348 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "OutgoingPaymentView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "CreditorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "ReceivingPaymentMethod": {
+      "$ref": "#/definitions/ReceivingPaymentMethodTypeView"
+    },
+    "SenderPaymentMethod": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/SupplierPaymentMethodTypeView"
+        }
+      ]
+    },
+    "SendingBankgiroNo": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ReceivingBankgiroNo": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ReceivingPlusgiroNo": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ReceivingClearingNo": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ReceivingAccountNo": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ReceiverName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "PaymentDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "Amount": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/AmountView"
+        }
+      ]
+    },
+    "Reference": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "IsSalaryPayment": {
+      "type": "boolean"
+    },
+    "BankIdReferenceToken": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "guid"
+    },
+    "PaymentPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "SenderPlusgiro": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int32"
+    },
+    "OutgoingPaymentType": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/OutgoingPaymentTypeView"
+        }
+      ]
+    },
+    "ReceiverAddress": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ReceiverCoAddress": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ReceiverZipCode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ReceiverCity": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "TransactionFilePublicId": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "guid"
+    },
+    "ReceiverIban": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ReceiverBic": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Comment": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Category": {
+      "$ref": "#/definitions/P27CategoryPurposeTypeView"
+    },
+    "ChargeBearer": {
+      "$ref": "#/definitions/P27ChargeBearerTypeView"
+    },
+    "PaymentCodeType": {
+      "$ref": "#/definitions/P27CodeTypeView"
+    },
+    "PainPaymentMethodType": {
+      "$ref": "#/definitions/P27MethodTypeView"
+    },
+    "ReceiverCountryCode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ReceiverOrgNo": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "SenderOrgNo": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "SenderName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "SenderBic": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "SenderIban": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  },
+  "definitions": {
+    "ReceivingPaymentMethodTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "BankGiro",
+        "PlusGiro",
+        "BankAccount",
+        "Iban",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        4,
+        -1
+      ]
+    },
+    "SupplierPaymentMethodTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "BankGiro",
+        "PlusGiro",
+        "BankAccount",
+        "IBAN",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        -1
+      ]
+    },
+    "AmountView": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "CurrencyCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ValueForView": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "OutgoingPaymentTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "Unknown",
+        "Bankgiro",
+        "P27"
+      ],
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
+    "P27CategoryPurposeTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "SUPP",
+        "CORT",
+        "INTC",
+        "TREA",
+        "SALA",
+        "TAXS",
+        "PENS"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "P27ChargeBearerTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "SHAR",
+        "CRED",
+        "DEBT",
+        "SLEV"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "P27CodeTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "NURG",
+        "URGP",
+        "SEPA"
+      ],
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
+    "P27MethodTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "TRF",
+        "CHK"
+      ],
+      "enum": [
+        0,
+        1
+      ]
+    }
+  }
+}

@@ -2,12 +2,14 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class ReconciliationInvoiceActionReminderView extends DataTransferObject
+class ReconciliationInvoiceActionReminderView extends Data
 {
-	public ?FileView $File = null;
-
-	/** Format: date-time */
-	public string $Created;
+	public function __construct(
+		/** Format: date-time */
+		public string $Created,
+		public ?FileView $File = null,
+	) {
+	}
 }

@@ -2,9 +2,12 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class CreatedView extends DataTransferObject
+class CreatedView extends Data
 {
-	public ?string $PublicId = null;
+	public function __construct(
+		public ?string $PublicId = null,
+	) {
+	}
 }

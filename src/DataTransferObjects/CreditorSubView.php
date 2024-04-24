@@ -2,14 +2,17 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class CreditorSubView extends DataTransferObject
+class CreditorSubView extends Data
 {
-	/** Format: guid */
-	public string $CreditorPublicId;
-	public ?string $Name = null;
-	public bool $IsEnabled;
-	public ?string $OrgNo = null;
-	public ?string $LogoURL = null;
+	public function __construct(
+		/** Format: guid */
+		public string $CreditorPublicId,
+		public bool $IsEnabled,
+		public ?string $Name = null,
+		public ?string $OrgNo = null,
+		public ?string $LogoURL = null,
+	) {
+	}
 }

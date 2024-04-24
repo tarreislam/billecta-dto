@@ -2,28 +2,29 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class RegisterPaymentView extends DataTransferObject
+class RegisterPaymentView extends Data
 {
-	public ?string $ActionPublicId = null;
-	public ?AmountView $Amount = null;
-	public ?AmountView $WriteOff = null;
-	public ?string $Comment = null;
-
-	/** Format: date-time */
-	public string $Date;
-	public float $WriteOffVat;
-	public ?string $OverrideWriteOffAccount = null;
-	public ?string $PaymentMeanCode = null;
-
-	/**
-	 * 0: None
-	 * 1: AsCurrencyDifference
-	 * 2: AsOverPayments
-	 * -1: Unknown
-	 * @var string|int
-	 */
-	public $OvershootingAmountHandling;
-	public ?string $PaymentReferenceText = null;
+	public function __construct(
+		/** Format: date-time */
+		public string $Date,
+		public float $WriteOffVat,
+		/**
+		 * 0: None
+		 * 1: AsCurrencyDifference
+		 * 2: AsOverPayments
+		 * -1: Unknown
+		 * @var string|int
+		 */
+		public string|int $OvershootingAmountHandling,
+		public ?string $ActionPublicId = null,
+		public ?AmountView $Amount = null,
+		public ?AmountView $WriteOff = null,
+		public ?string $Comment = null,
+		public ?string $OverrideWriteOffAccount = null,
+		public ?string $PaymentMeanCode = null,
+		public ?string $PaymentReferenceText = null,
+	) {
+	}
 }

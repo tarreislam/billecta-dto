@@ -2,37 +2,35 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class AccountingExportView extends DataTransferObject
+class AccountingExportView extends Data
 {
-	/** Format: guid */
-	public string $CreditorPublicId;
-
-	/** Format: date-time */
-	public string $Start;
-
-	/** Format: date-time */
-	public string $End;
-
-	/** Format: date-time */
-	public ?string $Created = null;
-	public ?string $CreatedBy = null;
-
-	/**
-	 * 0: SIE4
-	 * 1: CSV
-	 * -1: Unknown
-	 * @var string|int
-	 */
-	public $Format;
-
-	/**
-	 * 0: EventDate
-	 * 1: TransactionDate
-	 * -1: Unknown
-	 * @var string|int
-	 */
-	public $DateSelectionType;
-	public ?FileView $File = null;
+	public function __construct(
+		/** Format: guid */
+		public string $CreditorPublicId,
+		/** Format: date-time */
+		public string $Start,
+		/** Format: date-time */
+		public string $End,
+		/**
+		 * 0: SIE4
+		 * 1: CSV
+		 * -1: Unknown
+		 * @var string|int
+		 */
+		public string|int $Format,
+		/**
+		 * 0: EventDate
+		 * 1: TransactionDate
+		 * -1: Unknown
+		 * @var string|int
+		 */
+		public string|int $DateSelectionType,
+		/** Format: date-time */
+		public ?string $Created = null,
+		public ?string $CreatedBy = null,
+		public ?FileView $File = null,
+	) {
+	}
 }

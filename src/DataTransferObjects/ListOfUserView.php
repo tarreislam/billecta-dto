@@ -2,10 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class ListOfUserView extends DataTransferObject
+class ListOfUserView extends Data
 {
 	/** @var UserView[] */
 	public array $items;
+
+
+	public function __construct()
+	{
+	}
 }

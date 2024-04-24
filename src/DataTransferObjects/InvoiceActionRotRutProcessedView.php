@@ -2,13 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class InvoiceActionRotRutProcessedView extends DataTransferObject
+class InvoiceActionRotRutProcessedView extends Data
 {
-	public ?string $ActionPublicId = null;
-
-	/** Format: date-time */
-	public string $Processed;
-	public ?string $ProcessedBy = null;
+	public function __construct(
+		/** Format: date-time */
+		public string $Processed,
+		public ?string $ActionPublicId = null,
+		public ?string $ProcessedBy = null,
+	) {
+	}
 }

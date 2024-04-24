@@ -2,27 +2,30 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class CreditorKycFormView extends DataTransferObject
+class CreditorKycFormView extends Data
 {
-	public ?CreditorKycFormCompanyView $Company = null;
-	public ?CreditorKycFormContactView $Contact = null;
-	public bool $IsTaxableInUS;
-	public bool $IsFinancialInstitute;
-	public bool $IsActiveNonFinancialInstitute;
-	public bool $IsAnyOwnerUsPersons;
-	public ?array $UsPersons = null;
-	public bool $IsManagingCash;
-	public ?string $ManagingCashPurpose = null;
-	public ?string $ManagingCashYearlyRevenue = null;
-	public bool $IsManagingCurrenyExchanges;
-	public ?string $ManagingCurrenyExchangesPurpose = null;
-	public ?CreditorKycFormBusinessCategoryView $BusinessCategory = null;
-	public bool $HasNoOwnersWithMoreThan25Percent;
-	public ?array $OwnersWithMoreThan25Percent = null;
-	public bool $HasNoBeneficialOwners;
-	public ?array $BeneficialOwners = null;
-	public bool $IsAnyonePEP;
-	public bool $HasAnyoneBusinessRelationWithOtherPEP;
+	public function __construct(
+		public bool $IsTaxableInUS,
+		public bool $IsFinancialInstitute,
+		public bool $IsActiveNonFinancialInstitute,
+		public bool $IsAnyOwnerUsPersons,
+		public bool $IsManagingCash,
+		public bool $IsManagingCurrenyExchanges,
+		public bool $HasNoOwnersWithMoreThan25Percent,
+		public bool $HasNoBeneficialOwners,
+		public bool $IsAnyonePEP,
+		public bool $HasAnyoneBusinessRelationWithOtherPEP,
+		public ?CreditorKycFormCompanyView $Company = null,
+		public ?CreditorKycFormContactView $Contact = null,
+		public ?array $UsPersons = null,
+		public ?string $ManagingCashPurpose = null,
+		public ?string $ManagingCashYearlyRevenue = null,
+		public ?string $ManagingCurrenyExchangesPurpose = null,
+		public ?CreditorKycFormBusinessCategoryView $BusinessCategory = null,
+		public ?array $OwnersWithMoreThan25Percent = null,
+		public ?array $BeneficialOwners = null,
+	) {
+	}
 }

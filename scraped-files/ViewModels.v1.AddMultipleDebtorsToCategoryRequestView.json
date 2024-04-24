@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "AddMultipleDebtorsToCategoryRequestView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "CategoryPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "CreditorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "DebtorPublicIds": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string",
+        "format": "guid"
+      }
+    }
+  }
+}

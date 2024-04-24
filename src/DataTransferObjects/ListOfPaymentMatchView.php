@@ -2,10 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class ListOfPaymentMatchView extends DataTransferObject
+class ListOfPaymentMatchView extends Data
 {
 	/** @var PaymentMatchView[] */
 	public array $items;
+
+
+	public function __construct()
+	{
+	}
 }

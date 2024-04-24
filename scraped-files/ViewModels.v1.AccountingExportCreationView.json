@@ -1,0 +1,163 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "AccountingExportCreationView",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "CreditorPublicId": {
+      "type": "string",
+      "format": "guid"
+    },
+    "From": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "To": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "BookKeepingTypesFilter": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/definitions/AccountingRecordTypeView"
+      }
+    },
+    "DateSelectionType": {
+      "$ref": "#/definitions/AccountingExportDateSelectionTypeView"
+    },
+    "Format": {
+      "$ref": "#/definitions/AccountingExportFormatTypeView"
+    },
+    "SummarizeAccountsByDate": {
+      "type": "boolean"
+    },
+    "AppendTransDescription": {
+      "type": "boolean"
+    }
+  },
+  "definitions": {
+    "AccountingRecordTypeView": {
+      "type": "string",
+      "description": "",
+      "x-enumNames": [
+        "ProductSales",
+        "ProductSalesWithReverseVAT",
+        "RotRutDiscount",
+        "PaymentToBankAccount",
+        "OverPaymentToBankAccount",
+        "CentRounding",
+        "Interest",
+        "ProductSalesEU",
+        "ProductSalesEUVAT",
+        "ProductSalesNonEU",
+        "SupplierPaymentFromBankAccount",
+        "SupplierPurchaseDebt",
+        "SupplierPurchaseEU",
+        "SupplierPurchaseEUVAT",
+        "SupplierPurchaseNonEU",
+        "CurrencyDifference",
+        "FinanceCostNoRecourse",
+        "SelfInvoiceDebt",
+        "SelfInvoiceDebtVAT",
+        "SelfInvoicePaymentFromBankAccount",
+        "SelfInvoiceCreditation",
+        "InvoiceSalesDebtRemoved",
+        "WriteOff",
+        "ReminderCostPayment",
+        "Accrual",
+        "AdminsitrationCost",
+        "InvoiceSalesDebtAdded",
+        "RestingVAT",
+        "FreightCost",
+        "OverPaymentDeleted",
+        "UnmatchedPaymentToBankAccount",
+        "UnmatchedPaymentDeleted",
+        "FinanceCostWithRecourse",
+        "ClientFundDebt",
+        "NonPerformingLoanPurchase",
+        "PurchasedNonPerformingLoanPayment",
+        "ManualBalanceDeleted",
+        "BalanceFromInvoiceDeleted",
+        "DebtCollectionPaymentFee",
+        "ProductSalesWithAdviceMethod",
+        "BankAndTransactionCost",
+        "Unknown"
+      ],
+      "enum": [
+        "ProductSales",
+        "ProductSalesWithReverseVAT",
+        "RotRutDiscount",
+        "PaymentToBankAccount",
+        "OverPaymentToBankAccount",
+        "CentRounding",
+        "Interest",
+        "ProductSalesEU",
+        "ProductSalesEUVAT",
+        "ProductSalesNonEU",
+        "SupplierPaymentFromBankAccount",
+        "SupplierPurchaseDebt",
+        "SupplierPurchaseEU",
+        "SupplierPurchaseEUVAT",
+        "SupplierPurchaseNonEU",
+        "CurrencyDifference",
+        "FinanceCostNoRecourse",
+        "SelfInvoiceDebt",
+        "SelfInvoiceDebtVAT",
+        "SelfInvoicePaymentFromBankAccount",
+        "SelfInvoiceCreditation",
+        "InvoiceSalesDebtRemoved",
+        "WriteOff",
+        "ReminderCostPayment",
+        "Accrual",
+        "AdminsitrationCost",
+        "InvoiceSalesDebtAdded",
+        "RestingVAT",
+        "FreightCost",
+        "OverPaymentDeleted",
+        "UnmatchedPaymentToBankAccount",
+        "UnmatchedPaymentDeleted",
+        "FinanceCostWithRecourse",
+        "ClientFundDebt",
+        "NonPerformingLoanPurchase",
+        "PurchasedNonPerformingLoanPayment",
+        "ManualBalanceDeleted",
+        "BalanceFromInvoiceDeleted",
+        "DebtCollectionPaymentFee",
+        "ProductSalesWithAdviceMethod",
+        "BankAndTransactionCost",
+        "Unknown"
+      ]
+    },
+    "AccountingExportDateSelectionTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "EventDate",
+        "TransactionDate",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        -1
+      ]
+    },
+    "AccountingExportFormatTypeView": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "SIE4",
+        "CSV",
+        "Unknown"
+      ],
+      "enum": [
+        0,
+        1,
+        -1
+      ]
+    }
+  }
+}

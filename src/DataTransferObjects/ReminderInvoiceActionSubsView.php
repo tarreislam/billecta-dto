@@ -2,10 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class ReminderInvoiceActionSubsView extends DataTransferObject
+class ReminderInvoiceActionSubsView extends Data
 {
 	/** @var ReminderInvoiceActionSubView[] */
 	public array $ReminderInvoiceActionSubView;
+
+
+	public function __construct()
+	{
+	}
 }

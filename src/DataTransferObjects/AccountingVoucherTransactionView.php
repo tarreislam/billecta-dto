@@ -2,13 +2,16 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class AccountingVoucherTransactionView extends DataTransferObject
+class AccountingVoucherTransactionView extends Data
 {
-	public ?AmountView $DebetAmount = null;
-	public ?AmountView $CreditAmount = null;
-	public ?string $Account = null;
-	public ?string $CostCenter = null;
-	public ?string $Project = null;
+	public function __construct(
+		public ?AmountView $DebetAmount = null,
+		public ?AmountView $CreditAmount = null,
+		public ?string $Account = null,
+		public ?string $CostCenter = null,
+		public ?string $Project = null,
+	) {
+	}
 }

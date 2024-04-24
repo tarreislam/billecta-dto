@@ -2,12 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class CountryView extends DataTransferObject
+class CountryView extends Data
 {
-	public ?string $CountryCode = null;
-	public ?string $SwedishCountryName = null;
-	public ?string $EnglishCountryName = null;
-	public ?string $PhoneCode = null;
+	public function __construct(
+		public ?string $CountryCode = null,
+		public ?string $SwedishCountryName = null,
+		public ?string $EnglishCountryName = null,
+		public ?string $PhoneCode = null,
+	) {
+	}
 }

@@ -2,11 +2,14 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class UserSubscribedInvoiceView extends DataTransferObject
+class UserSubscribedInvoiceView extends Data
 {
-	/** Format: guid */
-	public string $UserPublicId;
-	public ?string $ActionPublicId = null;
+	public function __construct(
+		/** Format: guid */
+		public string $UserPublicId,
+		public ?string $ActionPublicId = null,
+	) {
+	}
 }

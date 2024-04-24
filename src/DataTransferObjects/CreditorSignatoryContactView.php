@@ -2,12 +2,15 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class CreditorSignatoryContactView extends DataTransferObject
+class CreditorSignatoryContactView extends Data
 {
-	public ?string $FirstName = null;
-	public ?string $LastName = null;
-	public ?string $Email = null;
-	public ?string $Phone = null;
+	public function __construct(
+		public ?string $FirstName = null,
+		public ?string $LastName = null,
+		public ?string $Email = null,
+		public ?string $Phone = null,
+	) {
+	}
 }

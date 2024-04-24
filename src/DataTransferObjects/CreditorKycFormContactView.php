@@ -2,13 +2,16 @@
 
 namespace Tarre\Billecta\DataTransferObjects;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use Spatie\LaravelData\Data;
 
-class CreditorKycFormContactView extends DataTransferObject
+class CreditorKycFormContactView extends Data
 {
-	public ?string $Name = null;
-	public ?string $CitizenshipCountryName = null;
-	public ?string $TaxCountryName = null;
-	public ?string $Email = null;
-	public ?string $Phone = null;
+	public function __construct(
+		public ?string $Name = null,
+		public ?string $CitizenshipCountryName = null,
+		public ?string $TaxCountryName = null,
+		public ?string $Email = null,
+		public ?string $Phone = null,
+	) {
+	}
 }
